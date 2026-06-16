@@ -50,6 +50,16 @@ function AppRoutes() {
     );
   }
 
+  // Learning Room renders fully standalone
+  const isLearnPage = location.pathname.includes('/learn');
+  if (isLearnPage) {
+    return (
+      <Routes>
+        <Route path="/course/:courseId/learn" element={<ProtectedRoute><LearningRoom /></ProtectedRoute>} />
+      </Routes>
+    );
+  }
+
   return (
     <div className="app-container">
       {showSidebar && <Sidebar />}
@@ -70,9 +80,6 @@ function AppRoutes() {
             } />
             <Route path="/notifications" element={
               <ProtectedRoute><NotificationsPage /></ProtectedRoute>
-            } />
-            <Route path="/course/:courseId/learn" element={
-              <ProtectedRoute><LearningRoom /></ProtectedRoute>
             } />
             <Route path="/course/:courseId/quiz" element={
               <ProtectedRoute><QuizPage /></ProtectedRoute>

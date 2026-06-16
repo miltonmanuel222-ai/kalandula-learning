@@ -297,7 +297,7 @@ def run_extraction(
 
     print(f"  ✅ Output gravado em: {out_path}")
     print(f"\n{'='*60}")
-    print(f"  🎉 CONCLUÍDO!")
+    print(f"  CONCLUÍDO!")
     print(f"  📊 {output_data['total_courses']} cursos | {output_data['total_quizzes']} quizzes")
     print(f"  📁 Ficheiro: {out_path}")
     print(f"{'='*60}\n")
