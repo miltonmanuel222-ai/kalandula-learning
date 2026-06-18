@@ -428,3 +428,86 @@ button {
 .card.glass::-webkit-scrollbar { width: 4px; }
 .card.glass::-webkit-scrollbar-track { background: transparent; }
 .card.glass::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* ==============================================================
+   RESPONSIVE DESIGN (Mobile & Tablets)
+   ============================================================== */
+
+/* Adjust padding for main content areas */
+@media (max-width: 992px) {
+  .main-content {
+    padding: 1.5rem 2rem;
+  }
+  .public-page-body {
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  /* Sidebar Drawer Logic */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transform: translateX(-100%);
+    box-shadow: none;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .sidebar-close-btn {
+    display: flex !important;
+  }
+  
+  /* Topbar Adjustments */
+  .topbar {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .topbar-search {
+    width: 100%;
+    order: 3; /* Push search to the next line if needed, or keep it */
+  }
+  
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  /* PublicNavbar Adjustments */
+  .public-navbar {
+    padding: 1rem !important;
+    gap: 0.5rem;
+  }
+  
+  /* Stats row in Home */
+  .stats-row {
+    flex-direction: column;
+    gap: 1.5rem !important;
+    align-items: flex-start;
+  }
+  
+  /* Fix grids for courses to strictly 1 column on mobile */
+  .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-grid h1 {
+    font-size: 2rem !important;
+  }
+  .topbar-search {
+    width: 100%;
+  }
+}

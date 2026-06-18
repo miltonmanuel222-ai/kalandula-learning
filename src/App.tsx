@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { FavoritesAndNotificationsProvider } from './contexts/FavoritesAndNotificationsContext';
@@ -26,6 +26,12 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 function AppRoutes() {
   const { user } = useAuth();
   const location = useLocation();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  // Close sidebar when route changes on mobile
+  React.useEffect(() => {
+    setIsSidebarOpen(false);
+  }, [location.pathname]);
 
   // Login is fully standalone (no navbar, no wrapper)
   const isLoginPage = location.pathname === '/login';
@@ -62,9 +68,9 @@ function AppRoutes() {
 
   return (
     <div className="app-container">
-      {showSidebar && <Sidebar />}
+      {showSidebar && <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />}
       <main className={showSidebar ? 'main-content' : 'main-content-full'} style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        {showSidebar && <Topbar />}
+        {showSidebar && <Topbar onMenuClick={() => setIsSidebarOpen(true)} />}
         {!showSidebar && <PublicNavbar />}
         <div className="" style={showSidebar ? {} : { flex: 1, width: '100%' }}>
           <Routes>

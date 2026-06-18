@@ -1,14 +1,26 @@
-import React from 'react';
-import { LogOut, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { LogOut, X, Loader2 } from 'lucide-react';
 
 interface LogoutConfirmationModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onConfirm: () => void;
+  onConfirm: () => void | Promise<void>;
 }
 
 export default function LogoutConfirmationModal({ isOpen, onClose, onConfirm }: LogoutConfirmationModalProps) {
-  if (!isOpen) return null;
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
+
+  if (!isOpen) {
+    if (isLoggingOut) setIsLoggingOut(false);
+    return null;
+  }
+
+  const handleConfirmClick = async () => {
+    setIsLoggingOut(true);
+    // Yield to the browser to paint the loading state
+    await new Promise(resolve => setTimeout(resolve, 300));
+    await Promise.resolve(onConfirm());
+  };
 
   return (
     <div style={{
@@ -41,6 +53,7 @@ export default function LogoutConfirmationModal({ isOpen, onClose, onConfirm }: 
         {/* Close Button */}
         <button 
           onClick={onClose}
+          disabled={isLoggingOut}
           style={{
             position: 'absolute',
             top: '1rem',
@@ -48,16 +61,17 @@ export default function LogoutConfirmationModal({ isOpen, onClose, onConfirm }: 
             background: 'none',
             border: 'none',
             color: 'var(--text-muted)',
-            cursor: 'pointer',
+            cursor: isLoggingOut ? 'not-allowed' : 'pointer',
             padding: '0.25rem',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            transition: 'var(--transition)'
+            transition: 'var(--transition)',
+            opacity: isLoggingOut ? 0.5 : 1
           }}
-          onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--surface-light)'}
-          onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
+          onMouseEnter={e => { if(!isLoggingOut) e.currentTarget.style.backgroundColor = 'var(--surface-light)' }}
+          onMouseLeave={e => { if(!isLoggingOut) e.currentTarget.style.backgroundColor = 'transparent' }}
         >
           <X size={20} />
         </button>
@@ -90,6 +104,7 @@ export default function LogoutConfirmationModal({ isOpen, onClose, onConfirm }: 
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
           <button 
             onClick={onClose}
+            disabled={isLoggingOut}
             style={{
               flex: 1,
               padding: '0.75rem 1.5rem',
@@ -99,20 +114,22 @@ export default function LogoutConfirmationModal({ isOpen, onClose, onConfirm }: 
               color: 'var(--text-main)',
               fontWeight: 600,
               fontSize: '0.95rem',
-              cursor: 'pointer',
-              transition: 'var(--transition)'
+              cursor: isLoggingOut ? 'not-allowed' : 'pointer',
+              transition: 'var(--transition)',
+              opacity: isLoggingOut ? 0.6 : 1
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.background = 'var(--surface-light)';
+              if(!isLoggingOut) e.currentTarget.style.background = 'var(--surface-light)';
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.background = 'var(--surface)';
+              if(!isLoggingOut) e.currentTarget.style.background = 'var(--surface)';
             }}
           >
             Cancelar
           </button>
           <button 
-            onClick={onConfirm}
+            onClick={handleConfirmClick}
+            disabled={isLoggingOut}
             style={{
               flex: 1,
               padding: '0.75rem 1.5rem',
@@ -121,20 +138,36 @@ export default function LogoutConfirmationModal({ isOpen, onClose, onConfirm }: 
               color: '#FFFFFF',
               fontWeight: 600,
               fontSize: '0.95rem',
-              cursor: 'pointer',
+              cursor: isLoggingOut ? 'not-allowed' : 'pointer',
               transition: 'var(--transition)',
-              boxShadow: '0 4px 12px rgba(239, 68, 68, 0.2)'
+              boxShadow: '0 4px 12px rgba(239, 68, 68, 0.2)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              opacity: isLoggingOut ? 0.8 : 1
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.background = '#DC2626';
-              e.currentTarget.style.transform = 'translateY(-1px)';
+              if(!isLoggingOut) {
+                e.currentTarget.style.background = '#DC2626';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+              }
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.background = '#EF4444';
-              e.currentTarget.style.transform = 'none';
+              if(!isLoggingOut) {
+                e.currentTarget.style.background = '#EF4444';
+                e.currentTarget.style.transform = 'none';
+              }
             }}
           >
-            Sair
+            {isLoggingOut ? (
+              <>
+                <Loader2 size={18} className="animate-spin" />
+                A sair...
+              </>
+            ) : (
+              'Sair'
+            )}
           </button>
         </div>
       </div>

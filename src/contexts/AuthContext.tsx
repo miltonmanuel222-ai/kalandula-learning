@@ -11,18 +11,22 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-
-  useEffect(() => {
+  const [user, setUser] = useState<User | null>(() => {
     const storedUser = localStorage.getItem('currentUser');
     if (storedUser) {
       try {
-        setUser(JSON.parse(storedUser));
+        return JSON.parse(storedUser);
       } catch (error) {
         console.error('Error parsing stored user:', error);
         localStorage.removeItem('currentUser');
       }
     }
+    return null;
+  });
+
+  useEffect(() => {
+    // We already loaded the user synchronously, but we can keep this for any other side effects if needed.
+    // Or we can just leave it empty. Let's just remove the logic from useEffect since it's in useState now.
   }, []);
 
   const login = (name: string, email: string) => {

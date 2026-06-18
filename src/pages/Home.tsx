@@ -293,15 +293,15 @@ export default function Home() {
             {course.description}
           </p>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', whiteSpace: 'nowrap' }}>
               <BookOpen size={14} /> {course.lessons.length} aulas
             </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: '#F59E0B', fontWeight: 600 }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: '#F59E0B', fontWeight: 600, whiteSpace: 'nowrap' }}>
               <Star size={14} fill="#F59E0B" /> {course.rating ?? 4.5}
               <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>({course.students ?? 0})</span>
             </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', whiteSpace: 'nowrap' }}>
               <Clock size={14} /> Auto-ritmo
             </span>
           </div>
@@ -431,7 +431,7 @@ export default function Home() {
 
           {/* Stats Bar */}
           <section style={{ background: 'white', borderBottom: '1px solid var(--border)', padding: '1.5rem 2rem' }}>
-            <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap' }}>
+            <div className="stats-row" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap' }}>
               {[
                 { icon: <BookOpen size={18} />, value: `${allCourses.length}+`, label: 'Cursos' },
                 { icon: <Users size={18} />, value: '5.000+', label: 'Estudantes' },

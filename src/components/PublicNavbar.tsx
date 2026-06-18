@@ -52,7 +52,7 @@ export default function PublicNavbar() {
   return (
     <div style={{ position: 'sticky', top: 0, zIndex: 50, fontFamily: 'var(--font-sans)' }}>
       {/* ─── Top Tier (Dark Header) ─── */}
-      <header style={{
+      <header className="public-navbar" style={{
         background: '#1C1D1F',
         padding: '0.85rem 2rem',
         display: 'flex',
@@ -160,17 +160,20 @@ export default function PublicNavbar() {
             </>
           ) : (
             <>
-              <Link to="/login" style={{ color: '#FFFFFF', fontSize: '0.9rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
-                Meus cursos
+              <Link to="/login" style={{ color: '#FFFFFF', fontSize: '0.9rem', textDecoration: 'none', transition: 'color 0.2s', fontWeight: 600 }} onMouseEnter={e => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
+                Entrar
               </Link>
-              <button onClick={() => navigate('/login')} style={{ background: 'none', border: 'none', color: '#FFFFFF', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                <Heart size={20} />
-              </button>
-              <button onClick={() => navigate('/login')} style={{ background: 'none', border: 'none', color: '#FFFFFF', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                <Bell size={20} />
-              </button>
-              <Link to="/login" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', borderRadius: '50%', background: '#3E4143', overflow: 'hidden', border: '1px solid #2D2F31' }}>
-                <img src="https://i.pravatar.cc/150?img=11" alt="Perfil" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <Link to="/login" style={{ 
+                background: 'var(--primary)', 
+                color: '#FFFFFF', 
+                padding: '0.5rem 1.25rem', 
+                borderRadius: '999px', 
+                fontSize: '0.9rem', 
+                fontWeight: 600, 
+                textDecoration: 'none', 
+                transition: 'background 0.2s' 
+              }} onMouseEnter={e => e.currentTarget.style.background = '#E85D2A'} onMouseLeave={e => e.currentTarget.style.background = 'var(--primary)'}>
+                Registar
               </Link>
             </>
           )}

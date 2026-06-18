@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { BookOpen, Compass, Award, Settings, LogOut } from 'lucide-react';
+import { BookOpen, Compass, Award, Settings, LogOut, X } from 'lucide-react';
 import LogoutConfirmationModal from './LogoutConfirmationModal';
 
-export default function Sidebar() {
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const { user, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,11 +28,38 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="sidebar">
-      <Link to="/" className="sidebar-brand">
-        <BookOpen className="w-8 h-8" style={{ color: 'var(--primary)' }} />
-        <span>Kalandula</span>
-      </Link>
+    <>
+      {/* Mobile Overlay */}
+      {isOpen && (
+        <div 
+          className="sidebar-overlay"
+          onClick={onClose}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            backgroundColor: 'rgba(15, 23, 42, 0.4)',
+            zIndex: 990,
+            backdropFilter: 'blur(2px)'
+          }}
+        />
+      )}
+
+      <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2.5rem' }}>
+          <Link to="/" className="sidebar-brand" style={{ marginBottom: 0 }}>
+            <BookOpen className="w-8 h-8" style={{ color: 'var(--primary)' }} />
+            <span>Kalandula</span>
+          </Link>
+          
+          {/* Mobile close button */}
+          <button 
+            className="sidebar-close-btn"
+            onClick={onClose}
+            style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', display: 'none' }}
+          >
+            <X size={24} />
+          </button>
+        </div>
 
       <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '1rem', marginTop: '1rem', letterSpacing: '0.05em' }}>
         MENU
@@ -87,5 +119,6 @@ export default function Sidebar() {
         onConfirm={handleConfirmLogout} 
       />
     </aside>
+    </>
   );
 }

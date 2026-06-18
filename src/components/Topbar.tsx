@@ -1,10 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Bell, MessageSquare, User as UserIcon } from 'lucide-react';
+import { Search, Bell, MessageSquare, User as UserIcon, Menu } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useFavoritesAndNotifications } from '../contexts/FavoritesAndNotificationsContext';
 
-export default function Topbar() {
+interface TopbarProps {
+  onMenuClick?: () => void;
+}
+
+export default function Topbar({ onMenuClick }: TopbarProps) {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -28,8 +32,14 @@ export default function Topbar() {
 
   return (
     <header className="topbar">
-      <div>
-        {/* Empty for spacing */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <button 
+          className="mobile-menu-btn"
+          onClick={onMenuClick}
+          style={{ background: 'none', border: 'none', color: 'var(--text-main)', cursor: 'pointer', padding: '0.5rem', display: 'none' }}
+        >
+          <Menu size={24} />
+        </button>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
         <div className="topbar-search">
