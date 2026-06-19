@@ -9,6 +9,7 @@ import {
   Lock, Settings, BookOpen, Trophy, SkipForward,
   Share2, Star, MessageCircle, MoreVertical, Square, ChevronDown, X
 } from 'lucide-react';
+import QuizModal from '../components/QuizModal';
 
 // ── YouTube IFrame API global types ──────────────────────────────────────────
 declare global {
@@ -63,6 +64,8 @@ export default function LearningRoom() {
   const [activeTab,    setActiveTab]    = useState('overview');
 
   const [showRatingModal, setShowRatingModal] = useState(false);
+  const [showCourseCompleteModal, setShowCourseCompleteModal] = useState(false);
+  const [showQuizModal, setShowQuizModal] = useState(false);
   const [ratingStep, setRatingStep] = useState<1 | 2>(1);
   const [ratingValue, setRatingValue] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
@@ -70,7 +73,16 @@ export default function LearningRoom() {
 
   const handleRatingSubmit = () => {
     setShowRatingModal(false);
-    addNotification('Classificação enviada com sucesso!', 'success');
+    if (user && course) {
+      addNotification({
+        userId: user.id,
+        type: 'course_update',
+        title: 'Classificação Enviada',
+        message: 'A sua classificação foi enviada com sucesso. Obrigado!',
+        courseId: course.id,
+        courseName: course.title
+      });
+    }
   };
 
   const getRatingText = (val: number) => {
@@ -160,7 +172,13 @@ export default function LearningRoom() {
 
     playerRef.current = new window.YT.Player(el, {
       videoId: vid,
-      playerVars: { rel: 0, modestbranding: 1, fs: 1, iv_load_policy: 3 },
+      playerVars: { 
+        rel: 0, 
+        modestbranding: 1, 
+        fs: 1, 
+        iv_load_policy: 3,
+        origin: window.location.origin 
+      },
       events: {
         onStateChange: (evt: { data: number }) => {
           if (evt.data === 0) handleVideoEnded();
@@ -191,6 +209,7 @@ export default function LearningRoom() {
         setEnrollment(updated);
         stateRef.current.enrollment = updated;
         if (updated.progress === 100 && enrollment.progress < 100) {
+          setShowCourseCompleteModal(true);
           addNotification({
             userId: user.id,
             type: 'course_completed',
@@ -269,7 +288,6 @@ export default function LearningRoom() {
     setCurrentIdx(idx);
   }
 
-  // ── Manual mark complete ─────────────────────────────────────────────────
   function handleMarkComplete() {
     if (!user || !course || !enrollment) return;
     const lesson = course.lessons[currentIdx];
@@ -278,12 +296,14 @@ export default function LearningRoom() {
     const updated = db.getEnrollment(user.id, course.id);
     if (updated) {
       setEnrollment(updated);
+      stateRef.current.enrollment = updated;
       if (updated.progress === 100 && enrollment.progress < 100) {
+        setShowCourseCompleteModal(true);
         addNotification({
           userId: user.id,
           type: 'course_completed',
           title: 'Curso concluído',
-          message: 'Curso concluído com sucesso!',
+          message: `Você concluiu "${course.title}". Avaliação final disponível.`,
           courseName: course.title,
           courseId: course.id,
         });
@@ -309,9 +329,8 @@ export default function LearningRoom() {
 
   const lesson      = course.lessons[currentIdx];
   const completed   = enrollment.completedLessons.includes(lesson.id);
-  const isVideo     = lesson.type === 'video';
-  const isYouTube   = isVideo && ytUrl(lesson.contentUrl);
-  const isLocalVid  = isVideo && !ytUrl(lesson.contentUrl);
+  const isYouTube   = ytUrl(lesson.contentUrl);
+  const isLocalVid  = !isYouTube;
   const hasNext     = currentIdx < course.lessons.length - 1;
   const hasPrev     = currentIdx > 0;
   const allDone     = enrollment.progress === 100;
@@ -423,7 +442,7 @@ export default function LearningRoom() {
           <div style={{ width: '100%', background: '#1c1d1f', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', position: 'relative', paddingTop: '56.25%' }}>
               
-              {isVideo && isYouTube && (
+              {isYouTube && (
                 <div id={YT_PLAYER_ID} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />
               )}
 
@@ -438,25 +457,21 @@ export default function LearningRoom() {
                 />
               )}
 
-              {/* Text lesson fallback inside player box */}
-              {!isVideo && (
-                <div style={{ position: 'absolute', inset: 0, background: '#1c1d1f', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#fff', padding: '2rem' }}>
-                  <FileText size={48} style={{ opacity: 0.3, marginBottom: '1rem' }} />
-                  <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>{lesson.title}</h2>
-                  <p style={{ fontSize: '1rem', textAlign: 'center', maxWidth: '600px', opacity: 0.8 }}>
-                    Esta é uma aula de texto. Por favor, leia os detalhes na aba "Visão geral" abaixo.
-                  </p>
-                </div>
-              )}
-
               {/* Player Error */}
-              {isVideo && isYouTube && playerError && (
-                <div style={{ position: 'absolute', inset: 0, background: '#1c1d1f', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: 'white' }}>
+              {isYouTube && playerError && (
+                <div style={{ position: 'absolute', inset: 0, background: '#1c1d1f', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: 'white', zIndex: 5 }}>
                   <PlayCircle size={40} style={{ opacity: 0.3 }} />
                   <p style={{ fontSize: '0.9rem', opacity: 0.6 }}>Vídeo indisponível neste momento.</p>
-                  <a href={lesson.contentUrl} target="_blank" rel="noopener noreferrer" style={{ background: '#fff', color: '#1c1d1f', padding: '0.6rem 1.25rem', borderRadius: '4px', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 700 }}>
-                    Abrir no YouTube ↗
-                  </a>
+                  <div style={{ display: 'flex', gap: '1rem' }}>
+                    <a href={lesson.contentUrl} target="_blank" rel="noopener noreferrer" style={{ background: '#fff', color: '#1c1d1f', padding: '0.6rem 1.25rem', borderRadius: '4px', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 700 }}>
+                      Abrir no YouTube ↗
+                    </a>
+                    {!enrollment?.completedLessons.includes(lesson.id) && (
+                      <button onClick={handleMarkComplete} style={{ background: '#22C55E', color: '#fff', border: 'none', padding: '0.6rem 1.25rem', borderRadius: '4px', fontSize: '0.875rem', fontWeight: 700, cursor: 'pointer' }}>
+                        Marcar como Concluída
+                      </button>
+                    )}
+                  </div>
                 </div>
               )}
 
@@ -516,13 +531,9 @@ export default function LearningRoom() {
             {activeTab === 'Visão geral' && (
               <div>
                 <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', color: '#1c1d1f' }}>{lesson.title}</h2>
-                {!isVideo ? (
-                  <div style={{ fontSize: '1rem', lineHeight: 1.6, color: '#3e4143', background: '#f7f9fa', padding: '1.5rem', borderRadius: '8px', border: '1px solid #d1d7dc' }}>
-                    {lesson.contentUrl}
-                  </div>
-                ) : (
-                  <p style={{ color: '#6a6f73', fontSize: '0.95rem' }}>Esta é uma aula em vídeo. Todo o material didático necessário será apresentado no decorrer da explicação acima.</p>
-                )}
+                <div style={{ fontSize: '1rem', lineHeight: 1.6, color: '#3e4143', background: '#f7f9fa', padding: '1.5rem', borderRadius: '8px', border: '1px solid #d1d7dc' }}>
+                  <p style={{ color: '#6a6f73', fontSize: '0.95rem', marginBottom: '0' }}>Esta é uma aula em vídeo. Assista até ao fim para que a plataforma marque a aula como concluída automaticamente.</p>
+                </div>
               </div>
             )}
             {activeTab !== 'Visão geral' && (
@@ -608,7 +619,7 @@ export default function LearningRoom() {
                 <div style={{ fontWeight: 700, color: '#1c1d1f', marginBottom: '0.5rem' }}>🎉 Curso Concluído!</div>
                 <div style={{ fontSize: '0.85rem', color: '#6a6f73', marginBottom: '1rem' }}>Faça a avaliação final para obter o seu certificado.</div>
                 <button
-                  onClick={() => navigate(`/course/${course.id}/quiz`)}
+                  onClick={() => setShowQuizModal(true)}
                   style={{ width: '100%', background: '#1c1d1f', color: '#fff', border: 'none', padding: '0.8rem', fontWeight: 700, cursor: 'pointer' }}
                 >
                   Fazer Avaliação
@@ -619,6 +630,42 @@ export default function LearningRoom() {
         </div>
 
       </div>
+
+      {/* ── COURSE COMPLETE MODAL ── */}
+      {showCourseCompleteModal && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.5)' }} onClick={() => setShowCourseCompleteModal(false)} />
+          <div style={{ position: 'relative', background: '#fff', borderRadius: '8px', width: '90%', maxWidth: '500px', padding: '2.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.2)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <button onClick={() => setShowCourseCompleteModal(false)} style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'none', border: 'none', cursor: 'pointer', color: '#1c1d1f' }}>
+              <X size={20} />
+            </button>
+            <Trophy size={64} color="#F59E0B" style={{ marginBottom: '1.5rem' }} />
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1c1d1f', marginBottom: '1rem' }}>
+              Parabéns! Você concluiu o curso!
+            </h2>
+            <p style={{ fontSize: '1rem', color: '#6a6f73', marginBottom: '2rem', lineHeight: 1.5 }}>
+              Você finalizou todas as aulas de <strong>{course.title}</strong>. Agora você já pode fazer a avaliação final para testar os seus conhecimentos e obter o seu certificado.
+            </p>
+            <button
+              onClick={() => {
+                setShowCourseCompleteModal(false);
+                setShowQuizModal(true);
+              }}
+              style={{ width: '100%', background: 'var(--primary)', color: '#fff', border: 'none', padding: '1rem', borderRadius: '4px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer', transition: 'background 0.2s' }}
+              onMouseEnter={e => e.currentTarget.style.opacity = '0.9'}
+              onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+            >
+              Fazer Avaliação Agora
+            </button>
+            <button
+              onClick={() => setShowCourseCompleteModal(false)}
+              style={{ marginTop: '1rem', background: 'none', color: '#6a6f73', border: 'none', fontWeight: 600, cursor: 'pointer' }}
+            >
+              Mais Tarde
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* ── RATING MODAL ── */}
       {showRatingModal && (
@@ -689,6 +736,35 @@ export default function LearningRoom() {
             )}
           </div>
         </div>
+      )}
+
+      {/* ── QUIZ MODAL ── */}
+      {showQuizModal && (
+        <QuizModal
+          courseId={course.id}
+          onClose={() => setShowQuizModal(false)}
+          onResetCourse={() => {
+            setShowQuizModal(false);
+            const resetEnrollment = db.getEnrollment(user.id, course.id);
+            if (resetEnrollment) {
+              setEnrollment(resetEnrollment);
+              stateRef.current.enrollment = resetEnrollment;
+              setCurrentIdx(0);
+              addNotification({
+                userId: user.id,
+                type: 'course_reset',
+                title: 'Progresso Reiniciado',
+                message: `Você esgotou as suas 3 tentativas. O curso "${course.title}" foi reiniciado.`,
+                courseName: course.title,
+                courseId: course.id
+              });
+            }
+          }}
+          onCertificate={() => {
+            setShowQuizModal(false);
+            navigate(`/course/${course.id}/certificate`);
+          }}
+        />
       )}
     </div>
   );

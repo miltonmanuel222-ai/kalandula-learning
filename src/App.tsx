@@ -11,11 +11,11 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import CourseDetails from './pages/CourseDetails';
 import LearningRoom from './pages/LearningRoom';
-import QuizPage from './pages/QuizPage';
 import CertificatePage from './pages/CertificatePage';
 import FavoritesPage from './pages/FavoritesPage';
 import NotificationsPage from './pages/NotificationsPage';
 import MyCourses from './pages/MyCourses';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user } = useAuth();
@@ -66,6 +66,16 @@ function AppRoutes() {
     );
   }
 
+  // Certificate Page renders fully standalone
+  const isCertificatePage = location.pathname.includes('/certificate');
+  if (isCertificatePage) {
+    return (
+      <Routes>
+        <Route path="/course/:courseId/certificate" element={<ProtectedRoute><CertificatePage /></ProtectedRoute>} />
+      </Routes>
+    );
+  }
+
   return (
     <div className="app-container">
       {showSidebar && <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />}
@@ -87,12 +97,12 @@ function AppRoutes() {
             <Route path="/notifications" element={
               <ProtectedRoute><NotificationsPage /></ProtectedRoute>
             } />
-            <Route path="/course/:courseId/quiz" element={
-              <ProtectedRoute><QuizPage /></ProtectedRoute>
-            } />
             <Route path="/course/:courseId/certificate" element={
               <ProtectedRoute><CertificatePage /></ProtectedRoute>
             } />
+            
+            {/* Catch-all route to prevent white screen on unknown URLs like old /quiz paths */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
         {!showSidebar && <PublicFooter />}
@@ -103,13 +113,15 @@ function AppRoutes() {
 
 function App() {
   return (
-    <AuthProvider>
-      <FavoritesAndNotificationsProvider>
-        <Router>
-          <AppRoutes />
-        </Router>
-      </FavoritesAndNotificationsProvider>
-    </AuthProvider>
+    <ErrorBoundary>
+      <AuthProvider>
+        <FavoritesAndNotificationsProvider>
+          <Router>
+            <AppRoutes />
+          </Router>
+        </FavoritesAndNotificationsProvider>
+      </AuthProvider>
+    </ErrorBoundary>
   );
 }
 

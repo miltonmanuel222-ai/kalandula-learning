@@ -8,8 +8,8 @@ export interface Lesson {
   id: string;
   courseId: string;
   title: string;
-  contentUrl: string; // Pode ser link de vídeo ou texto
-  type: 'video' | 'text';
+  contentUrl: string; // URL do vídeo (ex: YouTube)
+  type: 'video';
   duration: string;
 }
 
@@ -32,6 +32,7 @@ export interface Enrollment {
   completedLessons: string[]; // IDs of completed lessons
   progress: number; // 0 to 100
   completed: boolean;
+  quizAttempts: number;
 }
 
 export interface Question {

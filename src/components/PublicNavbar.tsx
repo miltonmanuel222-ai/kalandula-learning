@@ -163,7 +163,7 @@ export default function PublicNavbar() {
               <Link to="/login" style={{ color: '#FFFFFF', fontSize: '0.9rem', textDecoration: 'none', transition: 'color 0.2s', fontWeight: 600 }} onMouseEnter={e => e.currentTarget.style.color = 'var(--primary)'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
                 Entrar
               </Link>
-              <Link to="/login" style={{ 
+              <Link to="/login?mode=register" style={{ 
                 background: 'var(--primary)', 
                 color: '#FFFFFF', 
                 padding: '0.5rem 1.25rem', 

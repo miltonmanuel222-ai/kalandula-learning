@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { ChevronLeft, Mail, Lock, User } from 'lucide-react';
 import { authService } from '../services/authService';
@@ -139,7 +139,10 @@ function StudyIllustration() {
    Main Login component
 ════════════════════════════════════════════════ */
 export default function Login() {
-  const [mode, setMode] = useState<'login' | 'register' | 'recover'>('login');
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const initialMode = searchParams.get('mode') === 'register' ? 'register' : 'login';
+  const [mode, setMode] = useState<'login' | 'register' | 'recover'>(initialMode);
   const [email, setEmail]       = useState('');
   const [password, setPassword] = useState('');
   const [name, setName]         = useState('');
@@ -229,20 +232,16 @@ export default function Login() {
     
     // Login Validation or Registration
     if (isLogin) {
+      if (!authService.emailExists(email)) {
+        setErrorMsg('Conta não encontrada. Por favor, crie uma nova conta no separador "Criar Conta".');
+        return;
+      }
+
       const existingUser = authService.validateCredentials(email, password);
       
       if (!existingUser) {
-        // If email exists but validation failed, it means password was incorrect
-        if (authService.emailExists(email)) {
-          setErrorMsg('Senha incorreta. Se se esqueceu da sua senha, clique em "Esqueci-me a senha ?".');
-          return;
-        } else {
-          // Auto-register on login if the user does not exist (maintains original project design)
-          const newUser = authService.registerUser(email.split('@')[0], email, password);
-          login(newUser.name, email);
-          navigate('/');
-          return;
-        }
+        setErrorMsg('Senha incorreta. Se se esqueceu da sua senha, clique em "Esqueci-me a senha ?".');
+        return;
       }
       
       login(existingUser.name, email);
@@ -253,7 +252,7 @@ export default function Login() {
     if (isRegister) {
       if (!name) return;
       if (authService.emailExists(email)) {
-        setErrorMsg('Este email já está registado.');
+        setErrorMsg('Este email já está registado. Por favor, faça login.');
         return;
       }
 

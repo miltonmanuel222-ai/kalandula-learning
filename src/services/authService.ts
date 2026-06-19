@@ -39,8 +39,8 @@ class AuthService {
     const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
     if (!user) return null;
     
-    // If user has a password set, enforce check
-    if (user.password && user.password !== passwordField) {
+    // Enforce strict password check
+    if (user.password !== passwordField) {
       return null;
     }
     return user;

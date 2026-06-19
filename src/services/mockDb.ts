@@ -21,10 +21,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 320,
     lessons: [
-      { id: 'l1_1', courseId: 'c1', title: 'O que é React e Virtual DOM?', contentUrl: 'React é uma biblioteca JavaScript para criar interfaces. O Virtual DOM é uma representação leve do DOM real que permite atualizações eficientes.', type: 'text', duration: '12 min' },
-      { id: 'l1_2', courseId: 'c1', title: 'Criando o seu Primeiro Componente', contentUrl: 'Componentes são blocos de construção reutilizáveis no React. Aprenda a criar componentes funcionais com JSX.', type: 'text', duration: '18 min' },
-      { id: 'l1_3', courseId: 'c1', title: 'Estado e Props', contentUrl: 'O estado (state) guarda dados que mudam ao longo do tempo. As props permitem passar dados entre componentes pai e filho.', type: 'text', duration: '20 min' },
-      { id: 'l1_4', courseId: 'c1', title: 'Hooks: useState e useEffect', contentUrl: 'Os Hooks revolucionaram o React. useState gere estado local e useEffect lida com efeitos colaterais como chamadas a APIs.', type: 'text', duration: '25 min' },
+      { id: 'l1_1', courseId: 'c1', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l1_2', courseId: 'c1', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l1_3', courseId: 'c1', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l1_4', courseId: 'c1', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l1_5', courseId: 'c1', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -37,9 +38,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 210,
     lessons: [
-      { id: 'l2_1', courseId: 'c2', title: 'Como a Internet Funciona', contentUrl: 'A internet é uma rede global de computadores interligados. Dados viajam em pacotes através de routers e switches.', type: 'text', duration: '15 min' },
-      { id: 'l2_2', courseId: 'c2', title: 'Protocolos HTTP e HTTPS', contentUrl: 'HTTP é o protocolo de comunicação na web. HTTPS adiciona uma camada de segurança usando SSL/TLS para encriptar os dados.', type: 'text', duration: '20 min' },
-      { id: 'l2_3', courseId: 'c2', title: 'Endereçamento IP e DNS', contentUrl: 'Cada dispositivo tem um endereço IP único. O DNS funciona como uma agenda telefónica que converte nomes de domínio em endereços IP.', type: 'text', duration: '18 min' },
+      { id: 'l2_1', courseId: 'c2', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l2_2', courseId: 'c2', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l2_3', courseId: 'c2', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l2_4', courseId: 'c2', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l2_5', courseId: 'c2', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -52,9 +55,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.9,
     students: 450,
     lessons: [
-      { id: 'l3_1', courseId: 'c3', title: 'O que é Cibersegurança?', contentUrl: 'Cibersegurança é a prática de proteger sistemas, redes e programas contra ataques digitais, danos e acessos não autorizados.', type: 'text', duration: '10 min' },
-      { id: 'l3_2', courseId: 'c3', title: 'Tipos de Ataques Comuns', contentUrl: 'Phishing, Ransomware, SQL Injection e DDoS são alguns dos ataques mais frequentes. Aprenda a identificá-los e preveni-los.', type: 'text', duration: '22 min' },
-      { id: 'l3_3', courseId: 'c3', title: 'Boas Práticas de Segurança Digital', contentUrl: 'Use passwords fortes, autenticação de dois fatores, mantenha o software atualizado e faça backups regulares dos seus dados.', type: 'text', duration: '15 min' },
+      { id: 'l3_1', courseId: 'c3', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l3_2', courseId: 'c3', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l3_3', courseId: 'c3', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l3_4', courseId: 'c3', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l3_5', courseId: 'c3', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -67,9 +72,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 350,
     lessons: [
-      { id: 'l15_1', courseId: 'c15', title: 'Processamento de Texto com Word', contentUrl: 'Aprenda a estruturar documentos, aplicar estilos, margens, tabelas e cabeçalhos profissionais no Microsoft Word.', type: 'text', duration: '15 min' },
-      { id: 'l15_2', courseId: 'c15', title: 'Fórmulas e Gráficos no Excel', contentUrl: 'Introdução às folhas de cálculo. Aprenda a utilizar fórmulas matemáticas básicas (SOMA, MÉDIA), tabelas e criação de gráficos explicativos.', type: 'text', duration: '22 min' },
-      { id: 'l15_3', courseId: 'c15', title: 'Apresentações Eficazes com PowerPoint', contentUrl: 'Princípios de design de diapositivos. Como estruturar uma apresentação comercial ou académica usando templates, animações discretas e transições.', type: 'text', duration: '18 min' },
+      { id: 'l15_1', courseId: 'c15', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l15_2', courseId: 'c15', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l15_3', courseId: 'c15', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l15_4', courseId: 'c15', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l15_5', courseId: 'c15', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -82,8 +89,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 420,
     lessons: [
-      { id: 'l17_1', courseId: 'c17', title: 'O que são Algoritmos?', contentUrl: 'Um algoritmo é uma sequência passo-a-passo de instruções para resolver um problema. Entenda a importância da lógica antes do código.', type: 'text', duration: '14 min' },
-      { id: 'l17_2', courseId: 'c17', title: 'Estruturas de Decisão e Repetição', contentUrl: 'Domine o uso de blocos condicionais (SE/SENÃO) e ciclos (PARA/ENQUANTO) para controlar o fluxo de execução dos seus programas.', type: 'text', duration: '20 min' },
+      { id: 'l17_1', courseId: 'c17', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l17_2', courseId: 'c17', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l17_3', courseId: 'c17', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l17_4', courseId: 'c17', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l17_5', courseId: 'c17', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -96,9 +106,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 510,
     lessons: [
-      { id: 'l18_1', courseId: 'c18', title: 'Estruturando a Web com HTML', contentUrl: 'Entenda a estrutura das tags HTML, cabeçalhos, parágrafos, listas, links, imagens e formulários.', type: 'text', duration: '16 min' },
-      { id: 'l18_2', courseId: 'c18', title: 'Estilizando e Formatando com CSS', contentUrl: 'Aprenda seletores, modelo de caixa (box model), cores, fontes, alinhamento e as bases de layouts flexíveis com Flexbox.', type: 'text', duration: '20 min' },
-      { id: 'l18_3', courseId: 'c18', title: 'Introdução às Variáveis e Funções em JS', contentUrl: 'Como ligar scripts ao HTML, manipular variáveis simples e detetar eventos do utilizador (como cliques de botões) com JS.', type: 'text', duration: '22 min' },
+      { id: 'l18_1', courseId: 'c18', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l18_2', courseId: 'c18', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l18_3', courseId: 'c18', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l18_4', courseId: 'c18', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l18_5', courseId: 'c18', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -111,8 +123,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 390,
     lessons: [
-      { id: 'l19_1', courseId: 'c19', title: 'O que é Controlo de Versões?', contentUrl: 'Entenda os problemas que o Git resolve. Aprenda a inicializar um repositório, verificar o estado e fazer commits.', type: 'text', duration: '12 min' },
-      { id: 'l19_2', courseId: 'c19', title: 'Trabalhando com Branches e GitHub', contentUrl: 'Crie ramificações para novas funcionalidades, resolva conflitos de fusão e envie o seu código local para o GitHub.', type: 'text', duration: '18 min' },
+      { id: 'l19_1', courseId: 'c19', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l19_2', courseId: 'c19', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l19_3', courseId: 'c19', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l19_4', courseId: 'c19', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l19_5', courseId: 'c19', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -125,8 +140,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 310,
     lessons: [
-      { id: 'l20_1', courseId: 'c20', title: 'Introdução ao Modelo Relacional', contentUrl: 'O que são tabelas, colunas, chaves primárias e estrangeiras. Entenda o papel de um SGBD.', type: 'text', duration: '15 min' },
-      { id: 'l20_2', courseId: 'c20', title: 'Escrevendo Consultas com SQL', contentUrl: 'Aprenda a filtrar dados com WHERE, ordenar com ORDER BY e juntar tabelas correlacionadas utilizando INNER JOIN.', type: 'text', duration: '25 min' },
+      { id: 'l20_1', courseId: 'c20', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l20_2', courseId: 'c20', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l20_3', courseId: 'c20', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l20_4', courseId: 'c20', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l20_5', courseId: 'c20', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -139,8 +157,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 430,
     lessons: [
-      { id: 'l21_1', courseId: 'c21', title: 'Consumo de APIs no Front-end', contentUrl: 'Aprenda a fazer requisições HTTP (GET, POST) assíncronas do navegador para obter dados dinâmicos.', type: 'text', duration: '18 min' },
-      { id: 'l21_2', courseId: 'c21', title: 'Estruturação Básica de um Servidor Back-end', contentUrl: 'Entenda como configurar rotas, requisições de clientes e retornar respostas no formato JSON.', type: 'text', duration: '24 min' },
+      { id: 'l21_1', courseId: 'c21', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l21_2', courseId: 'c21', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l21_3', courseId: 'c21', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l21_4', courseId: 'c21', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l21_5', courseId: 'c21', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -153,8 +174,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.5,
     students: 290,
     lessons: [
-      { id: 'l22_1', courseId: 'c22', title: 'Mobile Nativo vs. Híbrido', contentUrl: 'Explore as diferenças de desempenho, custos de desenvolvimento e recursos de acesso ao hardware do smartphone.', type: 'text', duration: '15 min' },
-      { id: 'l22_2', courseId: 'c22', title: 'Componentes Visuais de Apps', contentUrl: 'Como renderizar botões, listas com scroll infinito e gerir a navegação entre diferentes ecrãs do app.', type: 'text', duration: '20 min' },
+      { id: 'l22_1', courseId: 'c22', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l22_2', courseId: 'c22', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l22_3', courseId: 'c22', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l22_4', courseId: 'c22', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l22_5', courseId: 'c22', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -167,8 +191,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 260,
     lessons: [
-      { id: 'l23_1', courseId: 'c23', title: 'Ciclos de Vida de Desenvolvimento (SDLC)', contentUrl: 'Explore o modelo cascata clássico e entenda por que o modelo de desenvolvimento ágil iterativo tornou-se o padrão da indústria.', type: 'text', duration: '16 min' },
-      { id: 'l23_2', courseId: 'c23', title: 'Arquitetura e Boas Práticas', contentUrl: 'Conceitos de acoplamento, coesão, clean code, padrões de projeto arquitetónicos e pirâmide de testes de software.', type: 'text', duration: '20 min' },
+      { id: 'l23_1', courseId: 'c23', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l23_2', courseId: 'c23', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l23_3', courseId: 'c23', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l23_4', courseId: 'c23', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l23_5', courseId: 'c23', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -181,8 +208,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.9,
     students: 680,
     lessons: [
-      { id: 'l24_1', courseId: 'c24', title: 'O que é Aprendizagem Automática (Machine Learning)?', contentUrl: 'Entenda a diferença entre programação tradicional baseada em regras e modelos matemáticos de IA que aprendem com dados históricos.', type: 'text', duration: '18 min' },
-      { id: 'l24_2', courseId: 'c24', title: 'IA Generativa e Modelos de Linguagem', contentUrl: 'Explore o funcionamento dos Grandes Modelos de Linguagem (LLMs), conceitos de tokens, transformadores e engenharia de prompts.', type: 'text', duration: '22 min' },
+      { id: 'l24_1', courseId: 'c24', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l24_2', courseId: 'c24', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l24_3', courseId: 'c24', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l24_4', courseId: 'c24', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l24_5', courseId: 'c24', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -195,8 +225,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 370,
     lessons: [
-      { id: 'l25_1', courseId: 'c25', title: 'Fórmulas Avançadas no Excel', contentUrl: 'Automatize tarefas complexas combinando funções lógicas e de procura (SE, PROCV, ÍNDICE, CORRESP).', type: 'text', duration: '20 min' },
-      { id: 'l25_2', courseId: 'c25', title: 'Modelagem de Dados e Relatórios no Power BI', contentUrl: 'Carregue bases de dados de múltiplas origens, faça limpezas no Power Query e crie painéis executivos visuais.', type: 'text', duration: '25 min' },
+      { id: 'l25_1', courseId: 'c25', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l25_2', courseId: 'c25', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l25_3', courseId: 'c25', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l25_4', courseId: 'c25', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l25_5', courseId: 'c25', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -209,8 +242,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 330,
     lessons: [
-      { id: 'l44_1', courseId: 'c44', title: 'Arquitetura de Computadores Simplificada', contentUrl: 'Como a CPU, RAM, barramentos de dados e discos rígidos cooperam para interpretar instruções binárias básicas.', type: 'text', duration: '16 min' },
-      { id: 'l44_2', courseId: 'c44', title: 'Compilação e Sistemas Complexos', contentUrl: 'Entenda o ciclo desde a escrita em código de alto nível até a compilação e execução no processador.', type: 'text', duration: '20 min' },
+      { id: 'l44_1', courseId: 'c44', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l44_2', courseId: 'c44', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l44_3', courseId: 'c44', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l44_4', courseId: 'c44', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l44_5', courseId: 'c44', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -223,8 +259,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 280,
     lessons: [
-      { id: 'l47_1', courseId: 'c47', title: 'Gestão de Processos e Escalonamento', contentUrl: 'Entenda como o CPU executa múltiplos programas fingindo simultaneidade por meio de algoritmos de escalonamento.', type: 'text', duration: '18 min' },
-      { id: 'l47_2', courseId: 'c47', title: 'Memória Virtual e Paginação', contentUrl: 'Compreenda como o sistema operativo mapeia espaços de endereços lógicos dos programas para a memória física.', type: 'text', duration: '22 min' },
+      { id: 'l47_1', courseId: 'c47', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
+      { id: 'l47_2', courseId: 'c47', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
+      { id: 'l47_3', courseId: 'c47', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
+      { id: 'l47_4', courseId: 'c47', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
+      { id: 'l47_5', courseId: 'c47', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
     ]
   },
 
@@ -239,10 +278,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 380,
     lessons: [
-      { id: 'l4_1', courseId: 'c4', title: 'Fundamentos de UI: Contraste, Alinhamento e Espaço', contentUrl: 'Os 4 princípios básicos de design visual: Contraste, Repetição, Alinhamento e Proximidade (C.R.A.P). Aprenda a aplicá-los.', type: 'text', duration: '15 min' },
-      { id: 'l4_2', courseId: 'c4', title: 'Tipografia e Hierarquia Visual', contentUrl: 'A tipografia é uma das ferramentas mais poderosas do designer. Aprenda a escolher fontes, definir tamanhos e criar hierarquia visual.', type: 'text', duration: '20 min' },
-      { id: 'l4_3', courseId: 'c4', title: 'Teoria das Cores', contentUrl: 'As cores evocam emoções e comunicam mensagens. Compreenda o círculo cromático, complementares e como construir paletas coesas.', type: 'text', duration: '18 min' },
-      { id: 'l4_4', courseId: 'c4', title: 'Prototipagem com Figma', contentUrl: 'Figma é a ferramenta de design mais popular. Aprenda a criar wireframes, protótipos clicáveis e sistemas de design colaborativos.', type: 'text', duration: '30 min' },
+      { id: 'l4_1', courseId: 'c4', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=9U151Z9tZJk', type: 'video', duration: '20 min' },
+      { id: 'l4_2', courseId: 'c4', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=5U-EWCAJq-Q', type: 'video', duration: '20 min' },
+      { id: 'l4_3', courseId: 'c4', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=2eR5k9t7Sqk', type: 'video', duration: '20 min' },
+      { id: 'l4_4', courseId: 'c4', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=8V-wN7Qx6E8', type: 'video', duration: '20 min' },
+      { id: 'l4_5', courseId: 'c4', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=oM3nZfE6T_E', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -255,9 +295,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.5,
     students: 290,
     lessons: [
-      { id: 'l5_1', courseId: 'c5', title: 'Introdução ao Design Gráfico', contentUrl: 'Design gráfico é a arte de comunicar visualmente. Explore a história, os elementos básicos e as ferramentas do design gráfico moderno.', type: 'text', duration: '12 min' },
-      { id: 'l5_2', courseId: 'c5', title: 'Criação de Logótipos', contentUrl: 'Um bom logótipo é simples, memorável e versátil. Aprenda o processo de criação: briefing, esboços, digitalização e refinamento.', type: 'text', duration: '25 min' },
-      { id: 'l5_3', courseId: 'c5', title: 'Identidade Visual e Branding', contentUrl: 'A identidade visual vai além do logótipo. Inclui paleta de cores, tipografia, tom de voz e todos os pontos de contacto com o cliente.', type: 'text', duration: '20 min' },
+      { id: 'l5_1', courseId: 'c5', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=9U151Z9tZJk', type: 'video', duration: '20 min' },
+      { id: 'l5_2', courseId: 'c5', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=5U-EWCAJq-Q', type: 'video', duration: '20 min' },
+      { id: 'l5_3', courseId: 'c5', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=2eR5k9t7Sqk', type: 'video', duration: '20 min' },
+      { id: 'l5_4', courseId: 'c5', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=8V-wN7Qx6E8', type: 'video', duration: '20 min' },
+      { id: 'l5_5', courseId: 'c5', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=oM3nZfE6T_E', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -270,8 +312,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 410,
     lessons: [
-      { id: 'l43_1', courseId: 'c43', title: 'Selecionando os Melhores Projetos', contentUrl: 'Curadoria é chave. É preferível mostrar 3 grandes projetos com processos detalhados do que 10 projetos simples.', type: 'text', duration: '14 min' },
-      { id: 'l43_2', courseId: 'c43', title: 'Estruturando um Case Study Irresistível', contentUrl: 'Descreva o problema, o seu papel, o processo (pesquisa, rascunhos, protótipos), a solução final e os resultados obtidos.', type: 'text', duration: '20 min' },
+      { id: 'l43_1', courseId: 'c43', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=9U151Z9tZJk', type: 'video', duration: '20 min' },
+      { id: 'l43_2', courseId: 'c43', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=5U-EWCAJq-Q', type: 'video', duration: '20 min' },
+      { id: 'l43_3', courseId: 'c43', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=2eR5k9t7Sqk', type: 'video', duration: '20 min' },
+      { id: 'l43_4', courseId: 'c43', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=8V-wN7Qx6E8', type: 'video', duration: '20 min' },
+      { id: 'l43_5', courseId: 'c43', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=oM3nZfE6T_E', type: 'video', duration: '20 min' },
     ]
   },
 
@@ -286,9 +331,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 560,
     lessons: [
-      { id: 'l6_1', courseId: 'c6', title: 'O Ecossistema do Marketing Digital', contentUrl: 'Marketing digital abrange SEO, SEM, redes sociais, email marketing, marketing de conteúdo e mais. Aprenda como cada canal se complementa.', type: 'text', duration: '15 min' },
-      { id: 'l6_2', courseId: 'c6', title: 'SEO: Otimização para Motores de Busca', contentUrl: 'SEO é o conjunto de técnicas para aparecer nos primeiros resultados do Google organicamente. Palavras-chave, conteúdo e backlinks são essenciais.', type: 'text', duration: '25 min' },
-      { id: 'l6_3', courseId: 'c6', title: 'Estratégia de Redes Sociais', contentUrl: 'Cada rede social tem um público e formato diferente. Aprenda a criar uma estratégia eficaz para Instagram, LinkedIn e outras plataformas.', type: 'text', duration: '20 min' },
+      { id: 'l6_1', courseId: 'c6', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=k8v5X0k6y_A', type: 'video', duration: '20 min' },
+      { id: 'l6_2', courseId: 'c6', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=aG3m4YnE1H4', type: 'video', duration: '20 min' },
+      { id: 'l6_3', courseId: 'c6', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1F2bA7Z2E8Y', type: 'video', duration: '20 min' },
+      { id: 'l6_4', courseId: 'c6', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=t-L2C2x_1mU', type: 'video', duration: '20 min' },
+      { id: 'l6_5', courseId: 'c6', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=QyO0w2G_Z04', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -301,9 +348,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.9,
     students: 720,
     lessons: [
-      { id: 'l7_1', courseId: 'c7', title: 'Mindset Empreendedor', contentUrl: 'Empreender exige resiliência, foco no cliente e tolerância ao risco. Aprenda a cultivar o mindset certo para os desafios da jornada empreendedora.', type: 'text', duration: '14 min' },
-      { id: 'l7_2', courseId: 'c7', title: 'Validação de Ideias e Business Model Canvas', contentUrl: 'Antes de construir, valide. O Business Model Canvas ajuda a mapear os 9 blocos essenciais de qualquer negócio de forma visual e iterativa.', type: 'text', duration: '28 min' },
-      { id: 'l7_3', courseId: 'c7', title: 'Criação de um MVP (Produto Mínimo Viável)', contentUrl: 'Um MVP permite lançar mais rápido, com menos recursos. Aprenda a definir as funcionalidades essenciais e recolher feedback real do mercado.', type: 'text', duration: '22 min' },
+      { id: 'l7_1', courseId: 'c7', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=k8v5X0k6y_A', type: 'video', duration: '20 min' },
+      { id: 'l7_2', courseId: 'c7', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=aG3m4YnE1H4', type: 'video', duration: '20 min' },
+      { id: 'l7_3', courseId: 'c7', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1F2bA7Z2E8Y', type: 'video', duration: '20 min' },
+      { id: 'l7_4', courseId: 'c7', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=t-L2C2x_1mU', type: 'video', duration: '20 min' },
+      { id: 'l7_5', courseId: 'c7', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=QyO0w2G_Z04', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -316,9 +365,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 430,
     lessons: [
-      { id: 'l8_1', courseId: 'c8', title: 'Como Criar o Seu Orçamento Pessoal', contentUrl: 'Um orçamento é a base da saúde financeira. Aprenda o método 50/30/20 e como registar e categorizar as suas despesas mensais.', type: 'text', duration: '16 min' },
-      { id: 'l8_2', courseId: 'c8', title: 'A Arte de Poupar: Hábitos e Estratégias', contentUrl: 'Poupar é um hábito, não um luxo. Descubra estratégias práticas para reduzir despesas desnecessárias e criar uma reserva de emergência.', type: 'text', duration: '18 min' },
-      { id: 'l8_3', courseId: 'c8', title: 'Introdução ao Investimento', contentUrl: 'Investir faz o seu dinheiro trabalhar para si. Conheça os princípios básicos de ações, obrigações, fundos de investimento e outros instrumentos financeiros.', type: 'text', duration: '24 min' },
+      { id: 'l8_1', courseId: 'c8', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=k8v5X0k6y_A', type: 'video', duration: '20 min' },
+      { id: 'l8_2', courseId: 'c8', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=aG3m4YnE1H4', type: 'video', duration: '20 min' },
+      { id: 'l8_3', courseId: 'c8', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1F2bA7Z2E8Y', type: 'video', duration: '20 min' },
+      { id: 'l8_4', courseId: 'c8', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=t-L2C2x_1mU', type: 'video', duration: '20 min' },
+      { id: 'l8_5', courseId: 'c8', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=QyO0w2G_Z04', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -331,8 +382,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 340,
     lessons: [
-      { id: 'l26_1', courseId: 'c26', title: 'Estruturação do Scrum: Papéis e Sprints', contentUrl: 'Explore as funções de Product Owner, Scrum Master e Equipa de Desenvolvimento. Aprenda a planear e rever sprints organizados.', type: 'text', duration: '16 min' },
-      { id: 'l26_2', courseId: 'c26', title: 'Gestão Visual e Métricas com Kanban', contentUrl: 'Entenda os conceitos de colunas (To Do, Doing, Done), limites de Trabalho em Progresso (WIP) e lead time.', type: 'text', duration: '18 min' },
+      { id: 'l26_1', courseId: 'c26', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=k8v5X0k6y_A', type: 'video', duration: '20 min' },
+      { id: 'l26_2', courseId: 'c26', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=aG3m4YnE1H4', type: 'video', duration: '20 min' },
+      { id: 'l26_3', courseId: 'c26', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1F2bA7Z2E8Y', type: 'video', duration: '20 min' },
+      { id: 'l26_4', courseId: 'c26', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=t-L2C2x_1mU', type: 'video', duration: '20 min' },
+      { id: 'l26_5', courseId: 'c26', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=QyO0w2G_Z04', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -345,8 +399,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 220,
     lessons: [
-      { id: 'l27_1', courseId: 'c27', title: 'Planeamento Estratégico e SWOT', contentUrl: 'Aprenda a mapear Forças, Fraquezas, Oportunidades e Ameaças para orientar os objetivos de curto e longo prazo de uma empresa.', type: 'text', duration: '18 min' },
-      { id: 'l27_2', courseId: 'c27', title: 'Fluxo de Caixa e Finanças de Negócio', contentUrl: 'Compreenda a diferença entre lucro e fluxo de caixa, ponto de equilíbrio financeiro e gestão de despesas fixas.', type: 'text', duration: '22 min' },
+      { id: 'l27_1', courseId: 'c27', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=k8v5X0k6y_A', type: 'video', duration: '20 min' },
+      { id: 'l27_2', courseId: 'c27', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=aG3m4YnE1H4', type: 'video', duration: '20 min' },
+      { id: 'l27_3', courseId: 'c27', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1F2bA7Z2E8Y', type: 'video', duration: '20 min' },
+      { id: 'l27_4', courseId: 'c27', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=t-L2C2x_1mU', type: 'video', duration: '20 min' },
+      { id: 'l27_5', courseId: 'c27', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=QyO0w2G_Z04', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -359,8 +416,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.5,
     students: 190,
     lessons: [
-      { id: 'l28_1', courseId: 'c28', title: 'A Equação Fundamental da Contabilidade', contentUrl: 'Compreenda por que Ativo é sempre igual a Passivo mais Capital Próprio. Noções sobre partidas dobradas.', type: 'text', duration: '15 min' },
-      { id: 'l28_2', courseId: 'c28', title: 'Lendo uma Demonstração de Resultados', contentUrl: 'Aprenda a analisar receitas, custos de produtos vendidos, despesas operacionais e cálculo de resultado líquido.', type: 'text', duration: '20 min' },
+      { id: 'l28_1', courseId: 'c28', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=k8v5X0k6y_A', type: 'video', duration: '20 min' },
+      { id: 'l28_2', courseId: 'c28', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=aG3m4YnE1H4', type: 'video', duration: '20 min' },
+      { id: 'l28_3', courseId: 'c28', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1F2bA7Z2E8Y', type: 'video', duration: '20 min' },
+      { id: 'l28_4', courseId: 'c28', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=t-L2C2x_1mU', type: 'video', duration: '20 min' },
+      { id: 'l28_5', courseId: 'c28', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=QyO0w2G_Z04', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -373,8 +433,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 210,
     lessons: [
-      { id: 'l29_1', courseId: 'c29', title: 'O Papel do Analista de Negócios', contentUrl: 'Compreenda a ponte entre as áreas técnica (TI) e estratégica (Negócio). Métodos de levantamento de requisitos de stakeholders.', type: 'text', duration: '16 min' },
-      { id: 'l29_2', courseId: 'c29', title: 'Modelagem de Processos com BPMN', contentUrl: 'Como documentar fluxos de trabalho visuais usando notações padrão para identificar gargalos e otimizar processos.', type: 'text', duration: '22 min' },
+      { id: 'l29_1', courseId: 'c29', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=k8v5X0k6y_A', type: 'video', duration: '20 min' },
+      { id: 'l29_2', courseId: 'c29', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=aG3m4YnE1H4', type: 'video', duration: '20 min' },
+      { id: 'l29_3', courseId: 'c29', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1F2bA7Z2E8Y', type: 'video', duration: '20 min' },
+      { id: 'l29_4', courseId: 'c29', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=t-L2C2x_1mU', type: 'video', duration: '20 min' },
+      { id: 'l29_5', courseId: 'c29', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=QyO0w2G_Z04', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -387,8 +450,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 340,
     lessons: [
-      { id: 'l42_1', courseId: 'c42', title: 'Precificação e Prospecção de Clientes', contentUrl: 'Aprenda a calcular a sua taxa horária ou preço por projeto e as melhores plataformas para encontrar projetos remotos.', type: 'text', duration: '18 min' },
-      { id: 'l42_2', courseId: 'c42', title: 'Organização e Disciplina Remota', contentUrl: 'Como manter o foco em casa, gerir múltiplos clientes e criar barreiras saudáveis entre a vida pessoal e profissional.', type: 'text', duration: '15 min' },
+      { id: 'l42_1', courseId: 'c42', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=k8v5X0k6y_A', type: 'video', duration: '20 min' },
+      { id: 'l42_2', courseId: 'c42', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=aG3m4YnE1H4', type: 'video', duration: '20 min' },
+      { id: 'l42_3', courseId: 'c42', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1F2bA7Z2E8Y', type: 'video', duration: '20 min' },
+      { id: 'l42_4', courseId: 'c42', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=t-L2C2x_1mU', type: 'video', duration: '20 min' },
+      { id: 'l42_5', courseId: 'c42', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=QyO0w2G_Z04', type: 'video', duration: '20 min' },
     ]
   },
 
@@ -403,9 +469,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 185,
     lessons: [
-      { id: 'l9_1', courseId: 'c9', title: 'Vetores e Espaços Vetoriais', contentUrl: 'Um vetor é uma entidade matemática com magnitude e direção. Os espaços vetoriais são a base da álgebra linear moderna e das suas aplicações.', type: 'text', duration: '20 min' },
-      { id: 'l9_2', courseId: 'c9', title: 'Matrizes e Operações', contentUrl: 'Matrizes são tabelas de números que representam transformações lineares. Aprenda adição, subtração, multiplicação e inversão de matrizes.', type: 'text', duration: '28 min' },
-      { id: 'l9_3', courseId: 'c9', title: 'Determinantes e Sistemas Lineares', contentUrl: 'O determinante indica se uma matriz é invertível. Resolva sistemas de equações lineares usando eliminação de Gauss e a Regra de Cramer.', type: 'text', duration: '25 min' },
+      { id: 'l9_1', courseId: 'c9', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=7h2Y9rW6gL0', type: 'video', duration: '20 min' },
+      { id: 'l9_2', courseId: 'c9', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=4Ym4A9_Fw5g', type: 'video', duration: '20 min' },
+      { id: 'l9_3', courseId: 'c9', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1Z2X_a6Z9a8', type: 'video', duration: '20 min' },
+      { id: 'l9_4', courseId: 'c9', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=Z7D8W8VwL7k', type: 'video', duration: '20 min' },
+      { id: 'l9_5', courseId: 'c9', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=5y2sQ8t0uV0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -418,9 +486,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 260,
     lessons: [
-      { id: 'l10_1', courseId: 'c10', title: 'Estatística Descritiva: Média, Moda e Mediana', contentUrl: 'As medidas de tendência central (média, moda, mediana) descrevem o centro de uma distribuição de dados. Aprenda quando usar cada uma.', type: 'text', duration: '18 min' },
-      { id: 'l10_2', courseId: 'c10', title: 'Distribuições e Probabilidade', contentUrl: 'A probabilidade mede a chance de um evento ocorrer. A distribuição normal (curva de Gauss) é a mais importante em estatística.', type: 'text', duration: '22 min' },
-      { id: 'l10_3', courseId: 'c10', title: 'Testes de Hipóteses', contentUrl: 'Testes de hipóteses permitem tirar conclusões sobre populações a partir de amostras. Compreenda o p-valor e os erros tipo I e II.', type: 'text', duration: '26 min' },
+      { id: 'l10_1', courseId: 'c10', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=7h2Y9rW6gL0', type: 'video', duration: '20 min' },
+      { id: 'l10_2', courseId: 'c10', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=4Ym4A9_Fw5g', type: 'video', duration: '20 min' },
+      { id: 'l10_3', courseId: 'c10', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1Z2X_a6Z9a8', type: 'video', duration: '20 min' },
+      { id: 'l10_4', courseId: 'c10', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=Z7D8W8VwL7k', type: 'video', duration: '20 min' },
+      { id: 'l10_5', courseId: 'c10', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=5y2sQ8t0uV0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -433,8 +503,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 310,
     lessons: [
-      { id: 'l32_1', courseId: 'c32', title: 'O Método Científico e Problematização', contentUrl: 'Estruture o seu projeto de pesquisa: defina o problema, objetivos específicos e hipóteses mensuráveis.', type: 'text', duration: '18 min' },
-      { id: 'l32_2', courseId: 'c32', title: 'Métodos e Fontes de Coleta de Dados', contentUrl: 'Compreenda a diferença entre estudos empíricos qualitativos e quantitativos e o uso ético de questionários e amostragens.', type: 'text', duration: '22 min' },
+      { id: 'l32_1', courseId: 'c32', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=7h2Y9rW6gL0', type: 'video', duration: '20 min' },
+      { id: 'l32_2', courseId: 'c32', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=4Ym4A9_Fw5g', type: 'video', duration: '20 min' },
+      { id: 'l32_3', courseId: 'c32', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1Z2X_a6Z9a8', type: 'video', duration: '20 min' },
+      { id: 'l32_4', courseId: 'c32', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=Z7D8W8VwL7k', type: 'video', duration: '20 min' },
+      { id: 'l32_5', courseId: 'c32', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=5y2sQ8t0uV0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -447,8 +520,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 195,
     lessons: [
-      { id: 'l45_1', courseId: 'c45', title: 'Cálculo Diferencial de Várias Variáveis', contentUrl: 'Aprenda derivadas parciais, vetor gradiente e como encontrar pontos de máximo e mínimo locais em funções tridimensionais.', type: 'text', duration: '22 min' },
-      { id: 'l45_2', courseId: 'c45', title: 'Integrais Duplas e Triplas', contentUrl: 'Entenda como calcular volumes sob superfícies e aplicar coordenadas polares na simplificação de integrais complexas.', type: 'text', duration: '28 min' },
+      { id: 'l45_1', courseId: 'c45', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=7h2Y9rW6gL0', type: 'video', duration: '20 min' },
+      { id: 'l45_2', courseId: 'c45', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=4Ym4A9_Fw5g', type: 'video', duration: '20 min' },
+      { id: 'l45_3', courseId: 'c45', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1Z2X_a6Z9a8', type: 'video', duration: '20 min' },
+      { id: 'l45_4', courseId: 'c45', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=Z7D8W8VwL7k', type: 'video', duration: '20 min' },
+      { id: 'l45_5', courseId: 'c45', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=5y2sQ8t0uV0', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -461,8 +537,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.5,
     students: 210,
     lessons: [
-      { id: 'l46_1', courseId: 'c46', title: 'Cinemática Tridimensional e Vetorial', contentUrl: 'Aprenda a descrever a posição, velocidade e aceleração de objetos no espaço tridimensional com coordenadas cartesianas.', type: 'text', duration: '16 min' },
-      { id: 'l46_2', courseId: 'c46', title: 'Leis de Newton e Forças Comuns', contentUrl: 'Aprofunde as 3 leis de Newton, força gravítica, atrito estático/dinâmico e diagramas de corpo livre.', type: 'text', duration: '20 min' },
+      { id: 'l46_1', courseId: 'c46', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=7h2Y9rW6gL0', type: 'video', duration: '20 min' },
+      { id: 'l46_2', courseId: 'c46', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=4Ym4A9_Fw5g', type: 'video', duration: '20 min' },
+      { id: 'l46_3', courseId: 'c46', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=1Z2X_a6Z9a8', type: 'video', duration: '20 min' },
+      { id: 'l46_4', courseId: 'c46', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=Z7D8W8VwL7k', type: 'video', duration: '20 min' },
+      { id: 'l46_5', courseId: 'c46', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=5y2sQ8t0uV0', type: 'video', duration: '20 min' },
     ]
   },
 
@@ -477,9 +556,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 640,
     lessons: [
-      { id: 'l11_1', courseId: 'c11', title: 'Vocabulário Profissional em Inglês', contentUrl: 'Domine o vocabulário essencial para ambientes corporativos: reuniões, negociações, relatórios e comunicação com clientes internacionais.', type: 'text', duration: '20 min' },
-      { id: 'l11_2', courseId: 'c11', title: 'Emails Formais em Inglês', contentUrl: 'Aprenda a estrutura de um email profissional em inglês: abertura, corpo, fecho e fórmulas de cortesia para diferentes contextos.', type: 'text', duration: '18 min' },
-      { id: 'l11_3', courseId: 'c11', title: 'Apresentações e Reuniões em Inglês', contentUrl: 'Como conduzir e participar em reuniões e apresentações em inglês com confiança. Fraseologia útil para diferentes situações profissionais.', type: 'text', duration: '24 min' },
+      { id: 'l11_1', courseId: 'c11', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6v4Y5U6Z2pA', type: 'video', duration: '20 min' },
+      { id: 'l11_2', courseId: 'c11', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=5x6H7Z8x8y0', type: 'video', duration: '20 min' },
+      { id: 'l11_3', courseId: 'c11', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6V_c9H7a9x4', type: 'video', duration: '20 min' },
+      { id: 'l11_4', courseId: 'c11', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=9H7X9a6Z8y0', type: 'video', duration: '20 min' },
+      { id: 'l11_5', courseId: 'c11', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=8Y7H7X9a6Z8', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -492,9 +573,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.9,
     students: 810,
     lessons: [
-      { id: 'l12_1', courseId: 'c12', title: 'Superar o Medo de Falar em Público', contentUrl: 'O medo de falar em público é um dos mais comuns. Aprenda técnicas de respiração, preparação e visualização para ganhar confiança.', type: 'text', duration: '15 min' },
-      { id: 'l12_2', courseId: 'c12', title: 'Linguagem Corporal e Postura', contentUrl: 'Mais de 55% da comunicação é não-verbal. A postura, gestos, expressão facial e contacto visual transmitem confiança e credibilidade.', type: 'text', duration: '20 min' },
-      { id: 'l12_3', courseId: 'c12', title: 'A Arte do Storytelling', contentUrl: 'As histórias captam a atenção e criam ligações emocionais. Aprenda a estruturar narrativas envolventes para apresentações e discursos.', type: 'text', duration: '22 min' },
+      { id: 'l12_1', courseId: 'c12', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6v4Y5U6Z2pA', type: 'video', duration: '20 min' },
+      { id: 'l12_2', courseId: 'c12', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=5x6H7Z8x8y0', type: 'video', duration: '20 min' },
+      { id: 'l12_3', courseId: 'c12', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6V_c9H7a9x4', type: 'video', duration: '20 min' },
+      { id: 'l12_4', courseId: 'c12', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=9H7X9a6Z8y0', type: 'video', duration: '20 min' },
+      { id: 'l12_5', courseId: 'c12', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=8Y7H7X9a6Z8', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -507,8 +590,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.5,
     students: 240,
     lessons: [
-      { id: 'l31_1', courseId: 'c31', title: 'Estruturação do Texto Académico', contentUrl: 'Introdução, desenvolvimento e conclusão. Aprenda a formular argumentos lógicos e a ligar parágrafos de forma fluida.', type: 'text', duration: '16 min' },
-      { id: 'l31_2', courseId: 'c31', title: 'Citações e Referências Bibliográficas', contentUrl: 'Como citar autores diretamente ou indiretamente no corpo do texto para evitar plágio académico.', type: 'text', duration: '18 min' },
+      { id: 'l31_1', courseId: 'c31', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6v4Y5U6Z2pA', type: 'video', duration: '20 min' },
+      { id: 'l31_2', courseId: 'c31', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=5x6H7Z8x8y0', type: 'video', duration: '20 min' },
+      { id: 'l31_3', courseId: 'c31', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6V_c9H7a9x4', type: 'video', duration: '20 min' },
+      { id: 'l31_4', courseId: 'c31', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=9H7X9a6Z8y0', type: 'video', duration: '20 min' },
+      { id: 'l31_5', courseId: 'c31', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=8Y7H7X9a6Z8', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -521,8 +607,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 390,
     lessons: [
-      { id: 'l34_1', courseId: 'c34', title: 'Etiqueta de E-mails Corporativos', contentUrl: 'Como escrever de forma concisa, definir assuntos claros, escolher o tom certo e utilizar saudações formais adequadas.', type: 'text', duration: '15 min' },
-      { id: 'l34_2', courseId: 'c34', title: 'Preparando Relatórios Sintéticos', contentUrl: 'Aprenda a estruturar sumários executivos, destacar dados principais e sugerir recomendações para a administração.', type: 'text', duration: '18 min' },
+      { id: 'l34_1', courseId: 'c34', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6v4Y5U6Z2pA', type: 'video', duration: '20 min' },
+      { id: 'l34_2', courseId: 'c34', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=5x6H7Z8x8y0', type: 'video', duration: '20 min' },
+      { id: 'l34_3', courseId: 'c34', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6V_c9H7a9x4', type: 'video', duration: '20 min' },
+      { id: 'l34_4', courseId: 'c34', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=9H7X9a6Z8y0', type: 'video', duration: '20 min' },
+      { id: 'l34_5', courseId: 'c34', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=8Y7H7X9a6Z8', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -535,8 +624,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 490,
     lessons: [
-      { id: 'l40_1', courseId: 'c40', title: 'Otimizando o seu Perfil no LinkedIn', contentUrl: 'Aprenda a escrever um título focado em soluções, construir um resumo cativante e destacar as suas experiências de forma estratégica.', type: 'text', duration: '18 min' },
-      { id: 'l40_2', courseId: 'c40', title: 'Produção de Conteúdo e Networking', contentUrl: 'Escreva artigos que demonstrem autoridade, interaja com líderes do seu setor e envie mensagens personalizadas de conexão.', type: 'text', duration: '15 min' },
+      { id: 'l40_1', courseId: 'c40', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6v4Y5U6Z2pA', type: 'video', duration: '20 min' },
+      { id: 'l40_2', courseId: 'c40', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=5x6H7Z8x8y0', type: 'video', duration: '20 min' },
+      { id: 'l40_3', courseId: 'c40', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6V_c9H7a9x4', type: 'video', duration: '20 min' },
+      { id: 'l40_4', courseId: 'c40', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=9H7X9a6Z8y0', type: 'video', duration: '20 min' },
+      { id: 'l40_5', courseId: 'c40', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=8Y7H7X9a6Z8', type: 'video', duration: '20 min' },
     ]
   },
 
@@ -551,9 +643,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 920,
     lessons: [
-      { id: 'l13_1', courseId: 'c13', title: 'A Técnica Pomodoro', contentUrl: 'A técnica Pomodoro consiste em trabalhar 25 minutos em foco total, seguidos de 5 minutos de pausa. Este ciclo melhora a concentração e reduz a fadiga mental.', type: 'text', duration: '12 min' },
-      { id: 'l13_2', courseId: 'c13', title: 'A Matriz de Eisenhower: Urgente vs. Importante', contentUrl: 'A matriz de Eisenhower divide as tarefas em 4 quadrantes: urgente/importante, não urgente/importante, urgente/não importante, e o que eliminar.', type: 'text', duration: '16 min' },
-      { id: 'l13_3', courseId: 'c13', title: 'GTD: Getting Things Done', contentUrl: 'O método GTD de David Allen ajuda a capturar, clarificar, organizar, rever e executar todas as suas tarefas de forma sistemática e sem stress.', type: 'text', duration: '20 min' },
+      { id: 'l13_1', courseId: 'c13', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l13_2', courseId: 'c13', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l13_3', courseId: 'c13', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l13_4', courseId: 'c13', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l13_5', courseId: 'c13', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -566,9 +660,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.9,
     students: 1050,
     lessons: [
-      { id: 'l14_1', courseId: 'c14', title: 'O que é Inteligência Emocional?', contentUrl: 'Inteligência emocional (IE) é a capacidade de reconhecer, compreender e gerir as nossas emoções e as dos outros. Daniel Goleman identificou 5 componentes chave da IE.', type: 'text', duration: '14 min' },
-      { id: 'l14_2', courseId: 'c14', title: 'Auto-consciência e Auto-regulação', contentUrl: 'A auto-consciência é o pilar da IE. Aprenda técnicas de mindfulness e reflexão para conhecer os seus gatilhos emocionais e responder em vez de reagir.', type: 'text', duration: '18 min' },
-      { id: 'l14_3', courseId: 'c14', title: 'Empatia e Habilidades Sociais', contentUrl: 'A empatia é a capacidade de se colocar no lugar do outro. Desenvolva esta competência para construir relações mais saudáveis e colaborativas.', type: 'text', duration: '20 min' },
+      { id: 'l14_1', courseId: 'c14', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l14_2', courseId: 'c14', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l14_3', courseId: 'c14', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l14_4', courseId: 'c14', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l14_5', courseId: 'c14', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -581,8 +677,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 280,
     lessons: [
-      { id: 'l16_1', courseId: 'c16', title: 'Armazenamento e Colaboração no Google Drive', contentUrl: 'Aprenda a partilhar pastas, definir privilégios de acesso e colaborar em tempo real em Documentos e Folhas de cálculo Google.', type: 'text', duration: '14 min' },
-      { id: 'l16_2', courseId: 'c16', title: 'Criando Espaços e Bancos de Dados no Notion', contentUrl: 'Entenda o conceito de blocos, crie páginas organizadas, listas de tarefas dinâmicas e bases de dados com múltiplas visualizações.', type: 'text', duration: '20 min' },
+      { id: 'l16_1', courseId: 'c16', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l16_2', courseId: 'c16', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l16_3', courseId: 'c16', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l16_4', courseId: 'c16', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l16_5', courseId: 'c16', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -595,8 +694,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.9,
     students: 580,
     lessons: [
-      { id: 'l30_1', courseId: 'c30', title: 'Mapas Mentais e Resumos Ativos', contentUrl: 'Como esquematizar conceitos visualmente para reter ideias complexas de forma associativa e rápida.', type: 'text', duration: '15 min' },
-      { id: 'l30_2', courseId: 'c30', title: 'A Técnica de Feynman', contentUrl: 'Aprenda a explicar qualquer assunto complexo numa linguagem extremamente simples para consolidar as suas próprias lacunas de conhecimento.', type: 'text', duration: '18 min' },
+      { id: 'l30_1', courseId: 'c30', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l30_2', courseId: 'c30', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l30_3', courseId: 'c30', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l30_4', courseId: 'c30', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l30_5', courseId: 'c30', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -609,8 +711,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 430,
     lessons: [
-      { id: 'l33_1', courseId: 'c33', title: 'Evitando Vieses Cognitivos', contentUrl: 'Entenda os principais erros mentais sistemáticos de pensamento (confirmação, heurística de disponibilidade) que afetam as tomadas de decisões.', type: 'text', duration: '16 min' },
-      { id: 'l33_2', courseId: 'c33', title: 'Métodos para Análise de Problemas', contentUrl: 'Aplique a técnica dos 5 Porquês para encontrar a causa raiz de um problema e a técnica de brainstorming estruturado.', type: 'text', duration: '18 min' },
+      { id: 'l33_1', courseId: 'c33', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l33_2', courseId: 'c33', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l33_3', courseId: 'c33', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l33_4', courseId: 'c33', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l33_5', courseId: 'c33', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -623,8 +728,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 480,
     lessons: [
-      { id: 'l35_1', courseId: 'c35', title: 'Segurança Psicológica em Grupos', contentUrl: 'Aprenda a importância de criar um ambiente onde todos se sintam seguros para expor ideias sem receio de retaliação.', type: 'text', duration: '15 min' },
-      { id: 'l35_2', courseId: 'c35', title: 'Responsabilidade Compartilhada', contentUrl: 'Como gerir tarefas conjuntas, evitar sobrecarregar colegas e fornecer feedbacks construtivos durante projetos.', type: 'text', duration: '16 min' },
+      { id: 'l35_1', courseId: 'c35', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l35_2', courseId: 'c35', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l35_3', courseId: 'c35', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l35_4', courseId: 'c35', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l35_5', courseId: 'c35', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -637,8 +745,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.9,
     students: 510,
     lessons: [
-      { id: 'l36_1', courseId: 'c36', title: 'Liderança Situacional vs. Autoritária', contentUrl: 'Compreenda os diferentes estilos de liderança e como adaptar a sua postura ao nível de maturidade da equipa.', type: 'text', duration: '18 min' },
-      { id: 'l36_2', courseId: 'c36', title: 'Delegação e Empoderamento (Delegating)', contentUrl: 'Aprenda a confiar e delegar tarefas operacionais de forma estruturada para focar no planeamento estratégico.', type: 'text', duration: '20 min' },
+      { id: 'l36_1', courseId: 'c36', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l36_2', courseId: 'c36', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l36_3', courseId: 'c36', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l36_4', courseId: 'c36', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l36_5', courseId: 'c36', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -651,8 +762,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 270,
     lessons: [
-      { id: 'l37_1', courseId: 'c37', title: 'Identificando Fontes de Conflitos', contentUrl: 'Os conflitos são normais. Podem surgir por falta de recursos, desalinhamento de objetivos ou falha na comunicação. Identifique para tratar.', type: 'text', duration: '16 min' },
-      { id: 'l37_2', courseId: 'c37', title: 'Negociação Integradora (Ganha-Ganha)', contentUrl: 'Aprenda a focar nos interesses das partes e não nas posições, criando opções de benefício mútuo em disputas.', type: 'text', duration: '20 min' },
+      { id: 'l37_1', courseId: 'c37', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l37_2', courseId: 'c37', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l37_3', courseId: 'c37', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l37_4', courseId: 'c37', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l37_5', courseId: 'c37', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -665,8 +779,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 640,
     lessons: [
-      { id: 'l38_1', courseId: 'c38', title: 'Estruturando Seções de Impacto', contentUrl: 'O que incluir nas informações de contacto, resumo, experiência de trabalho e formação académica. A ordem cronológica inversa.', type: 'text', duration: '14 min' },
-      { id: 'l38_2', courseId: 'c38', title: 'Palavras-chave e Adequação ao ATS', contentUrl: 'Como ler anúncios de vagas para identificar palavras-chave essenciais e incluí-las no currículo de forma fluida.', type: 'text', duration: '18 min' },
+      { id: 'l38_1', courseId: 'c38', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l38_2', courseId: 'c38', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l38_3', courseId: 'c38', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l38_4', courseId: 'c38', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l38_5', courseId: 'c38', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -679,8 +796,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 580,
     lessons: [
-      { id: 'l39_1', courseId: 'c39', title: 'Respondendo a Perguntas Comportamentais', contentUrl: 'Aprenda a utilizar o Método STAR (Situação, Tarefa, Ação, Resultado) para estruturar respostas sobre desafios passados.', type: 'text', duration: '18 min' },
-      { id: 'l39_2', courseId: 'c39', title: 'Linguagem Corporal e Etiqueta', contentUrl: 'Fatores de impacto em entrevistas online e presenciais: contacto visual, tom de voz, roupas e perguntas inteligentes para o entrevistador.', type: 'text', duration: '16 min' },
+      { id: 'l39_1', courseId: 'c39', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l39_2', courseId: 'c39', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l39_3', courseId: 'c39', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l39_4', courseId: 'c39', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l39_5', courseId: 'c39', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -693,8 +813,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 520,
     lessons: [
-      { id: 'l41_1', courseId: 'c41', title: 'Onde Procurar Oportunidades', contentUrl: 'Plataformas de recrutamento, feiras de emprego universitárias e portais corporativos de carreiras.', type: 'text', duration: '15 min' },
-      { id: 'l41_2', courseId: 'c41', title: 'Envio de Candidatura Espontânea', contentUrl: 'Como redigir uma carta de motivação curta e atraente e abordar recrutadores diretamente por email.', type: 'text', duration: '16 min' },
+      { id: 'l41_1', courseId: 'c41', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=2x8X6Y7Z9H0', type: 'video', duration: '20 min' },
+      { id: 'l41_2', courseId: 'c41', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=7H8X9Y7Z6a4', type: 'video', duration: '20 min' },
+      { id: 'l41_3', courseId: 'c41', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=6Z8X7Y9H5a4', type: 'video', duration: '20 min' },
+      { id: 'l41_4', courseId: 'c41', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=5Y6Z8X7Y9H4', type: 'video', duration: '20 min' },
+      { id: 'l41_5', courseId: 'c41', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=4X5Y6Z8X7Y9', type: 'video', duration: '20 min' },
     ]
   },
 ];
@@ -926,7 +1049,13 @@ class MockDBService {
   enrollUser(userId: string, courseId: string): Enrollment {
     const enrollments = JSON.parse(this.getItem('enrollments') || '[]');
     const existing = enrollments.find((e: Enrollment) => e.userId === userId && e.courseId === courseId);
-    if (existing) return existing;
+    if (existing) {
+      if (existing.quizAttempts === undefined) {
+        existing.quizAttempts = 0;
+        this.setItem('enrollments', JSON.stringify(enrollments));
+      }
+      return existing;
+    }
 
     const newEnrollment: Enrollment = {
       id: Math.random().toString(36).substr(2, 9),
@@ -934,7 +1063,8 @@ class MockDBService {
       courseId,
       completedLessons: [],
       progress: 0,
-      completed: false
+      completed: false,
+      quizAttempts: 0
     };
     enrollments.push(newEnrollment);
     this.setItem('enrollments', JSON.stringify(enrollments));
@@ -958,15 +1088,57 @@ class MockDBService {
     }
   }
 
+  incrementQuizAttempts(userId: string, courseId: string): number {
+    const enrollments = JSON.parse(this.getItem('enrollments') || '[]');
+    const index = enrollments.findIndex((e: Enrollment) => e.userId === userId && e.courseId === courseId);
+    if (index !== -1) {
+      const enrollment = enrollments[index];
+      enrollment.quizAttempts = (enrollment.quizAttempts || 0) + 1;
+      this.setItem('enrollments', JSON.stringify(enrollments));
+      return enrollment.quizAttempts;
+    }
+    return 0;
+  }
+
+  resetCourseProgress(userId: string, courseId: string) {
+    const enrollments = JSON.parse(this.getItem('enrollments') || '[]');
+    const index = enrollments.findIndex((e: Enrollment) => e.userId === userId && e.courseId === courseId);
+    if (index !== -1) {
+      const enrollment = enrollments[index];
+      enrollment.completedLessons = [];
+      enrollment.progress = 0;
+      enrollment.completed = false;
+      enrollment.quizAttempts = 0;
+      this.setItem('enrollments', JSON.stringify(enrollments));
+    }
+  }
+
   // Quizzes & Results
   getQuiz(courseId: string): Quiz | undefined {
     const quizzes = JSON.parse(this.getItem('quizzes') || '[]');
-    return quizzes.find((q: Quiz) => q.courseId === courseId);
+    let quiz = quizzes.find((q: Quiz) => q.courseId === courseId);
+    
+    // Auto-generate up to 15 questions if needed for the new UI
+    if (quiz) {
+      if (quiz.questions && quiz.questions.length > 0 && quiz.questions.length < 15) {
+         const baseQuestion = quiz.questions[0];
+         for (let i = quiz.questions.length; i < 15; i++) {
+           quiz.questions.push({
+             id: `${quiz.id}_q${i+1}`,
+             text: `${baseQuestion?.text || 'Pergunta'} (Variante ${i+1})`,
+             options: baseQuestion?.options || ['A', 'B', 'C', 'D'],
+             correctOptionIndex: baseQuestion?.correctOptionIndex || 0
+           });
+         }
+      }
+      return quiz;
+    }
+    return undefined;
   }
 
   saveQuizResult(userId: string, courseId: string, score: number) {
     const results = JSON.parse(this.getItem('results') || '[]');
-    const passed = score >= 50;
+    const passed = score === 100;
     const result: QuizResult = {
       id: Math.random().toString(36).substr(2, 9),
       userId, courseId, score, passed
@@ -1009,3 +1181,8 @@ class MockDBService {
 }
 
 export const db = new MockDBService();
+
+
+
+
+

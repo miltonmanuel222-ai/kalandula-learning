@@ -8,6 +8,22 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      window.addEventListener('error', function(e) {
+        var errDiv = document.createElement('div');
+        errDiv.style.cssText = "position:fixed;top:0;left:0;width:100%;background:#fee2e2;color:red;padding:20px;z-index:99999;font-family:sans-serif;";
+        errDiv.innerHTML = '<h3>Critical JS Error</h3><p><strong>' + e.message + '</strong></p><p>' + e.filename + ':' + e.lineno + '</p><pre>' + (e.error && e.error.stack ? e.error.stack : '') + '</pre>';
+        document.body.prepend(errDiv);
+      });
+      window.addEventListener('unhandledrejection', function(e) {
+        var errDiv = document.createElement('div');
+        errDiv.style.cssText = "position:fixed;top:0;left:0;width:100%;background:#fee2e2;color:red;padding:20px;z-index:99999;font-family:sans-serif;";
+        var msg = e.reason && e.reason.message ? e.reason.message : String(e.reason);
+        var stack = e.reason && e.reason.stack ? e.reason.stack : '';
+        errDiv.innerHTML = '<h3>Unhandled Promise Rejection</h3><p><strong>' + msg + '</strong></p><pre>' + stack + '</pre>';
+        document.body.prepend(errDiv);
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

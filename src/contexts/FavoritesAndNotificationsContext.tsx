@@ -4,7 +4,7 @@ import { useAuth } from './AuthContext';
 export interface Notification {
   id: string;
   userId: string;
-  type: 'course_completed' | 'certificate_available' | 'new_course' | 'course_update';
+  type: 'course_completed' | 'certificate_available' | 'new_course' | 'course_update' | 'course_reset';
   title: string;
   message: string;
   courseId?: string;
@@ -136,7 +136,7 @@ export function FavoritesAndNotificationsProvider({ children }: { children: Reac
     setNotifications([]);
   }, []);
 
-  const unreadCount = notifications.filter(n => !n.read).length;
+  const unreadCount = notifications.filter(n => n && !n.read).length;
 
   const value: FavoritesAndNotificationsContextType = {
     favorites,

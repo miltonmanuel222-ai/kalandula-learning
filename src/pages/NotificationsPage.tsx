@@ -13,10 +13,10 @@ export default function NotificationsPage() {
   if (!user) return null;
 
   const filteredNotifications = filter === 'unread'
-    ? notifications.filter(n => !n.read)
-    : notifications;
+    ? notifications.filter(n => n && !n.read)
+    : notifications.filter(n => n);
 
-  const unreadCount = notifications.filter(n => !n.read).length;
+  const unreadCount = notifications.filter(n => n && !n.read).length;
 
   const getNotificationIcon = (type: string) => {
     switch (type) {
@@ -43,12 +43,15 @@ export default function NotificationsPage() {
         return 'Novo Curso';
       case 'course_update':
         return 'Atualização do Curso';
+      case 'course_reset':
+        return 'Progresso Reiniciado';
       default:
         return 'Notificação';
     }
   };
 
   const formatDate = (dateString: string) => {
+    if (!dateString) return 'Data desconhecida';
     try {
       const date = new Date(dateString);
       const now = new Date();
@@ -95,11 +98,11 @@ export default function NotificationsPage() {
               Notificações
             </h1>
             <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0 }}>
-              Total de {notifications.length} notificação{notifications.length !== 1 ? 's' : ''}
+              Total de {filteredNotifications.length} notificação{filteredNotifications.length !== 1 ? 's' : ''}
             </p>
           </div>
 
-          {notifications.length > 0 && (
+          {filteredNotifications.length > 0 && (
             <div style={{ display: 'flex', gap: '1rem' }}>
               {filteredNotifications.some(n => !n.read) && (
                 <button
@@ -162,7 +165,7 @@ export default function NotificationsPage() {
               transition: 'color 0.2s'
             }}
           >
-            Todas ({notifications.length})
+            Todas ({notifications.filter(n => n).length})
           </button>
           <button
             onClick={() => setFilter('unread')}
@@ -205,7 +208,7 @@ export default function NotificationsPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {filteredNotifications.map((notification) => (
               <div
-                key={notification.id}
+                key={notification.id || Math.random()}
                 onClick={() => !notification.read && markAsRead(notification.id)}
                 style={{
                   background: notification.read ? 'var(--bg-secondary)' : '#FFFDF9',

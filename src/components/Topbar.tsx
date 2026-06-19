@@ -142,9 +142,9 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
                   </div>
                 ) : (
                   <div style={{ flex: 1, overflowY: 'auto', maxHeight: '350px' }}>
-                    {recentNotifications.map((notification: any) => (
+                    {recentNotifications.map((notification: any) => notification && (
                       <div
-                        key={notification.id}
+                        key={notification.id || Math.random()}
                         style={{
                           padding: '1rem',
                           borderBottom: '1px solid var(--border)',
