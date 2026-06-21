@@ -88,6 +88,19 @@ class AuthService {
   }
 
   /**
+   * Updates a user's details.
+   */
+  public updateUser(email: string, updates: Partial<DBUser>): DBUser | null {
+    const users = this.getUsers();
+    const index = users.findIndex(u => u.email.toLowerCase() === email.toLowerCase());
+    if (index === -1) return null;
+
+    users[index] = { ...users[index], ...updates };
+    this.saveUsers(users);
+    return users[index];
+  }
+
+  /**
    * Auto-seeds Milton Manuel account for testing
    */
   public seedTestUser(): void {

@@ -96,7 +96,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               </button>
             </div>
             
-            <button className="sidebar-link" style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left' }}>
+            <button onClick={() => { navigate('/settings'); if (onClose) onClose(); }} className="sidebar-link" style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left' }}>
               <Settings size={20} /> Definições
             </button>
             <button onClick={handleLogoutClick} className="sidebar-link" style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', color: 'var(--danger)' }}>

@@ -222,8 +222,12 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
               <div style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-main)' }}>{user.name}</div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Estudante</div>
             </div>
-            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--primary-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)' }}>
-              <UserIcon size={20} />
+            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--primary-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', overflow: 'hidden' }}>
+              {user.avatarUrl ? (
+                <img src={user.avatarUrl} alt="Avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              ) : (
+                <UserIcon size={20} />
+              )}
             </div>
           </div>
         )}

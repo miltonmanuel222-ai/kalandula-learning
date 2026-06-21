@@ -15,6 +15,7 @@ import CertificatePage from './pages/CertificatePage';
 import FavoritesPage from './pages/FavoritesPage';
 import NotificationsPage from './pages/NotificationsPage';
 import MyCourses from './pages/MyCourses';
+import SettingsPage from './pages/SettingsPage';
 import ErrorBoundary from './components/ErrorBoundary';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -72,6 +73,16 @@ function AppRoutes() {
     return (
       <Routes>
         <Route path="/course/:courseId/certificate" element={<ProtectedRoute><CertificatePage /></ProtectedRoute>} />
+      </Routes>
+    );
+  }
+
+  // Settings Page renders fully standalone
+  const isSettingsPage = location.pathname === '/settings';
+  if (isSettingsPage) {
+    return (
+      <Routes>
+        <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
       </Routes>
     );
   }

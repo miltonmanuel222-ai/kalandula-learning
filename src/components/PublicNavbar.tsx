@@ -124,7 +124,7 @@ export default function PublicNavbar() {
                   onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', borderRadius: '50%', background: '#3E4143', overflow: 'hidden', border: '1px solid #2D2F31', cursor: 'pointer', padding: 0 }}
                 >
-                  <img src="https://i.pravatar.cc/150?img=11" alt="Perfil" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={user.avatarUrl || "https://i.pravatar.cc/150?img=11"} alt="Perfil" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </button>
                 
                 {isProfileMenuOpen && (
@@ -145,10 +145,7 @@ export default function PublicNavbar() {
                       <p style={{ fontWeight: 600, fontSize: '0.9rem', color: '#1E293B', margin: 0 }}>{user.name}</p>
                       <p style={{ fontSize: '0.8rem', color: '#64748B', margin: 0, marginTop: '2px' }}>{user.email}</p>
                     </div>
-                    <button style={{ padding: '0.75rem 1rem', background: 'none', border: 'none', textAlign: 'left', fontSize: '0.9rem', color: '#334155', display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }} onMouseEnter={e => e.currentTarget.style.background = '#F1F5F9'} onMouseLeave={e => e.currentTarget.style.background = 'none'}>
-                      <User size={16} /> Perfil
-                    </button>
-                    <button style={{ padding: '0.75rem 1rem', background: 'none', border: 'none', textAlign: 'left', fontSize: '0.9rem', color: '#334155', display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }} onMouseEnter={e => e.currentTarget.style.background = '#F1F5F9'} onMouseLeave={e => e.currentTarget.style.background = 'none'}>
+                    <button onClick={() => { setIsProfileMenuOpen(false); navigate('/settings'); }} style={{ padding: '0.75rem 1rem', background: 'none', border: 'none', textAlign: 'left', fontSize: '0.9rem', color: '#334155', display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }} onMouseEnter={e => e.currentTarget.style.background = '#F1F5F9'} onMouseLeave={e => e.currentTarget.style.background = 'none'}>
                       <Settings size={16} /> Definições
                     </button>
                     <button onClick={handleLogoutClick} style={{ padding: '0.75rem 1rem', background: 'none', border: 'none', textAlign: 'left', fontSize: '0.9rem', color: '#EF4444', display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }} onMouseEnter={e => e.currentTarget.style.background = '#FEF2F2'} onMouseLeave={e => e.currentTarget.style.background = 'none'}>

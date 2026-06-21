@@ -10,9 +10,10 @@ interface QuizModalProps {
   onClose: () => void;
   onResetCourse: () => void;
   onCertificate: () => void;
+  onEvaluateCourse?: () => void;
 }
 
-export default function QuizModal({ courseId, onClose, onResetCourse, onCertificate }: QuizModalProps) {
+export default function QuizModal({ courseId, onClose, onResetCourse, onCertificate, onEvaluateCourse }: QuizModalProps) {
   const { user } = useAuth();
   const { addNotification } = useFavoritesAndNotifications();
   
@@ -247,9 +248,11 @@ export default function QuizModal({ courseId, onClose, onResetCourse, onCertific
               <button onClick={onClose} style={{ background: 'none', border: '1px solid #1c1d1f', color: '#1c1d1f', padding: '0.8rem 1.5rem', borderRadius: '4px', fontWeight: 700, cursor: 'pointer' }}>
                 Fechar
               </button>
-              <button onClick={onCertificate} style={{ background: 'var(--primary)', color: '#fff', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '4px', fontWeight: 700, cursor: 'pointer' }}>
-                Imprimir Certificado
-              </button>
+              {onEvaluateCourse && (
+                <button onClick={onEvaluateCourse} style={{ background: 'var(--primary)', color: '#fff', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '4px', fontWeight: 700, cursor: 'pointer' }}>
+                  Avaliar Curso
+                </button>
+              )}
             </>
           )}
 

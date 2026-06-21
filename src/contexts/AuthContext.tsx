@@ -6,6 +6,7 @@ interface AuthContextType {
   user: User | null;
   login: (name: string, email: string) => void;
   logout: () => void;
+  updateProfile: (updates: Partial<User>) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -44,8 +45,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem('currentUser');
   };
 
+  const updateProfile = (updates: Partial<User>) => {
+    if (user) {
+      const dbUser = authService.updateUser(user.email, updates);
+      if (dbUser) {
+        setUser(dbUser);
+        localStorage.setItem('currentUser', JSON.stringify(dbUser));
+      }
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, updateProfile }}>
       {children}
     </AuthContext.Provider>
   );

@@ -66,13 +66,13 @@ export default function LearningRoom() {
   const [showRatingModal, setShowRatingModal] = useState(false);
   const [showCourseCompleteModal, setShowCourseCompleteModal] = useState(false);
   const [showQuizModal, setShowQuizModal] = useState(false);
-  const [ratingStep, setRatingStep] = useState<1 | 2>(1);
+  const [ratingStep, setRatingStep] = useState<1 | 2 | 3>(1);
   const [ratingValue, setRatingValue] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [ratingFeedback, setRatingFeedback] = useState('');
 
   const handleRatingSubmit = () => {
-    setShowRatingModal(false);
+    setRatingStep(3);
     if (user && course) {
       addNotification({
         userId: user.id,
@@ -681,7 +681,7 @@ export default function LearningRoom() {
               <X size={20} />
             </button>
 
-            {ratingStep === 1 ? (
+            {ratingStep === 1 && (
               <>
                 <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1c1d1f', marginBottom: '1rem', textAlign: 'center' }}>
                   Como você classificaria este curso?
@@ -705,7 +705,9 @@ export default function LearningRoom() {
                   ))}
                 </div>
               </>
-            ) : (
+            )}
+
+            {ratingStep === 2 && (
               <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <button onClick={() => setRatingStep(1)} style={{ position: 'absolute', top: '1rem', left: '1rem', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--primary)', fontWeight: 700, fontSize: '0.9rem' }}>
                   Voltar
@@ -730,6 +732,26 @@ export default function LearningRoom() {
                 <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
                   <button onClick={handleRatingSubmit} style={{ background: 'var(--primary)', color: '#fff', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '4px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer', transition: 'background 0.2s' }} onMouseEnter={e => e.currentTarget.style.opacity = '0.9'} onMouseLeave={e => e.currentTarget.style.opacity = '1'}>
                     Salvar e continuar
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {ratingStep === 3 && (
+              <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <Trophy size={64} color="#F59E0B" style={{ marginBottom: '1.5rem' }} />
+                <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1c1d1f', marginBottom: '1rem', textAlign: 'center' }}>
+                  Obrigado pela sua avaliação!
+                </h2>
+                <p style={{ fontSize: '1rem', color: '#6a6f73', marginBottom: '2rem', textAlign: 'center' }}>
+                  O seu certificado já está disponível para impressão.
+                </p>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+                  <button onClick={() => setShowRatingModal(false)} style={{ background: 'none', border: '1px solid #d1d7dc', color: '#1c1d1f', padding: '0.8rem 1.5rem', borderRadius: '4px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>
+                    Fechar
+                  </button>
+                  <button onClick={() => { setShowRatingModal(false); navigate(`/course/${course.id}/certificate`); }} style={{ background: 'var(--primary)', color: '#fff', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '4px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>
+                    Imprimir Certificado
                   </button>
                 </div>
               </div>
@@ -763,6 +785,14 @@ export default function LearningRoom() {
           onCertificate={() => {
             setShowQuizModal(false);
             navigate(`/course/${course.id}/certificate`);
+          }}
+          onEvaluateCourse={() => {
+            setShowQuizModal(false);
+            setShowRatingModal(true);
+            setRatingStep(1);
+            setRatingValue(0);
+            setHoverRating(0);
+            setRatingFeedback('');
           }}
         />
       )}
