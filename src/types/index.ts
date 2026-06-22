@@ -10,6 +10,11 @@ export interface Lesson {
   courseId: string;
   title: string;
   contentUrl: string; // URL do vídeo (ex: YouTube)
+  youtubeVideoId?: string;
+  imageUrl?: string;
+  description?: string;
+  module?: string;
+  order?: number;
   type: 'video';
   duration: string;
 }
@@ -21,6 +26,8 @@ export interface Course {
   imageUrl: string;
   category: string;
   level: 'Iniciante' | 'Intermédio' | 'Avançado';
+  instructor?: string;
+  youtubePlaylistId?: string;
   lessons: Lesson[];
   rating?: number;
   students?: number;

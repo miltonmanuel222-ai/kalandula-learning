@@ -10,6 +10,24 @@ export const CATEGORIES = [
 ];
 
 const INITIAL_COURSES: Course[] = [
+  {
+    id: 'cv_mock_1',
+    title: 'Curso de Python 3 - Mundo 1',
+    description: 'Neste curso, o professor Gustavo Guanabara vai te ensinar os primeiros passos com a linguagem Python.',
+    imageUrl: 'https://i.ytimg.com/vi/S9uPNppGsGo/maxresdefault.jpg',
+    category: 'tecnologia',
+    level: 'Iniciante',
+    instructor: 'Gustavo Guanabara (Curso em Vídeo)',
+    youtubePlaylistId: 'PLvE-ZAWIdP',
+    rating: 5.0,
+    students: 15200,
+    lessons: [
+      { id: 'l_mock_1', courseId: 'cv_mock_1', title: 'Seja Programador', contentUrl: 'https://www.youtube.com/watch?v=S9uPNppGsGo', youtubeVideoId: 'S9uPNppGsGo', module: 'Apresentação', order: 1, type: 'video', duration: '28 min' },
+      { id: 'l_mock_2', courseId: 'cv_mock_1', title: 'Para que serve o Python?', contentUrl: 'https://www.youtube.com/watch?v=Mp0vhMDI7fA', youtubeVideoId: 'Mp0vhMDI7fA', module: 'Apresentação', order: 2, type: 'video', duration: '34 min' },
+      { id: 'l_mock_3', courseId: 'cv_mock_1', title: 'Instalando o Python3 e o IDLE', contentUrl: 'https://www.youtube.com/watch?v=VuKvR1J2LQE', youtubeVideoId: 'VuKvR1J2LQE', module: 'Fundamentos', order: 3, type: 'video', duration: '20 min' },
+      { id: 'l_mock_4', courseId: 'cv_mock_1', title: 'Primeiros comandos em Python3', contentUrl: 'https://www.youtube.com/watch?v=31llNGKWDvI', youtubeVideoId: '31llNGKWDvI', module: 'Fundamentos', order: 4, type: 'video', duration: '25 min' }
+    ]
+  },
   // ─── TECNOLOGIA ───
   {
     id: 'c1',
@@ -21,11 +39,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 320,
     lessons: [
-      { id: 'l1_1', courseId: 'c1', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l1_2', courseId: 'c1', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l1_3', courseId: 'c1', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l1_4', courseId: 'c1', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l1_5', courseId: 'c1', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l1_1', courseId: 'c1', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l1_2', courseId: 'c1', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l1_3', courseId: 'c1', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l1_4', courseId: 'c1', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l1_5', courseId: 'c1', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -38,11 +56,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 210,
     lessons: [
-      { id: 'l2_1', courseId: 'c2', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l2_2', courseId: 'c2', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l2_3', courseId: 'c2', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l2_4', courseId: 'c2', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l2_5', courseId: 'c2', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l2_1', courseId: 'c2', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l2_2', courseId: 'c2', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l2_3', courseId: 'c2', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l2_4', courseId: 'c2', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l2_5', courseId: 'c2', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -55,11 +73,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.9,
     students: 450,
     lessons: [
-      { id: 'l3_1', courseId: 'c3', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l3_2', courseId: 'c3', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l3_3', courseId: 'c3', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l3_4', courseId: 'c3', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l3_5', courseId: 'c3', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l3_1', courseId: 'c3', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l3_2', courseId: 'c3', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l3_3', courseId: 'c3', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l3_4', courseId: 'c3', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l3_5', courseId: 'c3', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -72,11 +90,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 350,
     lessons: [
-      { id: 'l15_1', courseId: 'c15', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l15_2', courseId: 'c15', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l15_3', courseId: 'c15', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l15_4', courseId: 'c15', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l15_5', courseId: 'c15', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l15_1', courseId: 'c15', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l15_2', courseId: 'c15', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l15_3', courseId: 'c15', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l15_4', courseId: 'c15', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l15_5', courseId: 'c15', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -89,11 +107,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 420,
     lessons: [
-      { id: 'l17_1', courseId: 'c17', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l17_2', courseId: 'c17', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l17_3', courseId: 'c17', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l17_4', courseId: 'c17', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l17_5', courseId: 'c17', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l17_1', courseId: 'c17', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l17_2', courseId: 'c17', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l17_3', courseId: 'c17', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l17_4', courseId: 'c17', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l17_5', courseId: 'c17', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -106,11 +124,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 510,
     lessons: [
-      { id: 'l18_1', courseId: 'c18', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l18_2', courseId: 'c18', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l18_3', courseId: 'c18', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l18_4', courseId: 'c18', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l18_5', courseId: 'c18', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l18_1', courseId: 'c18', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l18_2', courseId: 'c18', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l18_3', courseId: 'c18', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l18_4', courseId: 'c18', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l18_5', courseId: 'c18', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -123,11 +141,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 390,
     lessons: [
-      { id: 'l19_1', courseId: 'c19', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l19_2', courseId: 'c19', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l19_3', courseId: 'c19', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l19_4', courseId: 'c19', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l19_5', courseId: 'c19', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l19_1', courseId: 'c19', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l19_2', courseId: 'c19', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l19_3', courseId: 'c19', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l19_4', courseId: 'c19', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l19_5', courseId: 'c19', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -140,11 +158,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.6,
     students: 310,
     lessons: [
-      { id: 'l20_1', courseId: 'c20', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l20_2', courseId: 'c20', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l20_3', courseId: 'c20', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l20_4', courseId: 'c20', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l20_5', courseId: 'c20', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l20_1', courseId: 'c20', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l20_2', courseId: 'c20', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l20_3', courseId: 'c20', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l20_4', courseId: 'c20', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l20_5', courseId: 'c20', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -157,11 +175,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 430,
     lessons: [
-      { id: 'l21_1', courseId: 'c21', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l21_2', courseId: 'c21', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l21_3', courseId: 'c21', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l21_4', courseId: 'c21', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l21_5', courseId: 'c21', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l21_1', courseId: 'c21', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l21_2', courseId: 'c21', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l21_3', courseId: 'c21', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l21_4', courseId: 'c21', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l21_5', courseId: 'c21', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -174,11 +192,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.5,
     students: 290,
     lessons: [
-      { id: 'l22_1', courseId: 'c22', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l22_2', courseId: 'c22', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l22_3', courseId: 'c22', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l22_4', courseId: 'c22', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l22_5', courseId: 'c22', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l22_1', courseId: 'c22', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l22_2', courseId: 'c22', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l22_3', courseId: 'c22', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l22_4', courseId: 'c22', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l22_5', courseId: 'c22', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -191,11 +209,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 260,
     lessons: [
-      { id: 'l23_1', courseId: 'c23', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l23_2', courseId: 'c23', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l23_3', courseId: 'c23', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l23_4', courseId: 'c23', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l23_5', courseId: 'c23', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l23_1', courseId: 'c23', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l23_2', courseId: 'c23', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l23_3', courseId: 'c23', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l23_4', courseId: 'c23', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l23_5', courseId: 'c23', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -208,11 +226,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.9,
     students: 680,
     lessons: [
-      { id: 'l24_1', courseId: 'c24', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l24_2', courseId: 'c24', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l24_3', courseId: 'c24', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l24_4', courseId: 'c24', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l24_5', courseId: 'c24', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l24_1', courseId: 'c24', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l24_2', courseId: 'c24', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l24_3', courseId: 'c24', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l24_4', courseId: 'c24', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l24_5', courseId: 'c24', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -225,11 +243,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.8,
     students: 370,
     lessons: [
-      { id: 'l25_1', courseId: 'c25', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l25_2', courseId: 'c25', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l25_3', courseId: 'c25', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l25_4', courseId: 'c25', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l25_5', courseId: 'c25', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l25_1', courseId: 'c25', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l25_2', courseId: 'c25', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l25_3', courseId: 'c25', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l25_4', courseId: 'c25', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l25_5', courseId: 'c25', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -242,11 +260,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 330,
     lessons: [
-      { id: 'l44_1', courseId: 'c44', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l44_2', courseId: 'c44', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l44_3', courseId: 'c44', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l44_4', courseId: 'c44', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l44_5', courseId: 'c44', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l44_1', courseId: 'c44', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l44_2', courseId: 'c44', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l44_3', courseId: 'c44', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l44_4', courseId: 'c44', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l44_5', courseId: 'c44', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
   {
@@ -259,11 +277,11 @@ const INITIAL_COURSES: Course[] = [
     rating: 4.7,
     students: 280,
     lessons: [
-      { id: 'l47_1', courseId: 'c47', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=6SfrO3D4dHM', type: 'video', duration: '20 min' },
-      { id: 'l47_2', courseId: 'c47', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=NuTRq_fQqfs', type: 'video', duration: '20 min' },
-      { id: 'l47_3', courseId: 'c47', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=F_f4_D0z8_s', type: 'video', duration: '20 min' },
-      { id: 'l47_4', courseId: 'c47', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=xrRy3RI3HE4', type: 'video', duration: '20 min' },
-      { id: 'l47_5', courseId: 'c47', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=nO3-8c4S9t0', type: 'video', duration: '20 min' },
+      { id: 'l47_1', courseId: 'c47', title: 'Aula 1 do curso', contentUrl: 'https://www.youtube.com/watch?v=ErjWNvP6mko', type: 'video', duration: '20 min' },
+      { id: 'l47_2', courseId: 'c47', title: 'Aula 2 do curso', contentUrl: 'https://www.youtube.com/watch?v=8mei6uVttho', type: 'video', duration: '20 min' },
+      { id: 'l47_3', courseId: 'c47', title: 'Aula 3 do curso', contentUrl: 'https://www.youtube.com/watch?v=kM1K9LpX_84', type: 'video', duration: '20 min' },
+      { id: 'l47_4', courseId: 'c47', title: 'Aula 4 do curso', contentUrl: 'https://www.youtube.com/watch?v=FcsY1YPBwzQ', type: 'video', duration: '20 min' },
+      { id: 'l47_5', courseId: 'c47', title: 'Aula 5 do curso', contentUrl: 'https://www.youtube.com/watch?v=ZtMzB5CoekE', type: 'video', duration: '20 min' },
     ]
   },
 
@@ -1181,6 +1199,7 @@ class MockDBService {
 }
 
 export const db = new MockDBService();
+
 
 
 

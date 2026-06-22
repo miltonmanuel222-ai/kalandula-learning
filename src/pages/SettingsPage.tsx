@@ -86,21 +86,6 @@ export default function SettingsPage() {
                 <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleFileChange} />
               </label>
             </div>
-            <div style={{ flex: 1 }}>
-              <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
-                URL da Imagem de Perfil (ou clique no ícone da câmara para carregar)
-              </label>
-              <input 
-                type="text" 
-                value={avatarUrl}
-                onChange={(e) => setAvatarUrl(e.target.value)}
-                placeholder="https://exemplo.com/minha-foto.jpg"
-                style={{ width: '100%', padding: '0.75rem', border: '1px solid var(--border)', borderRadius: '4px', fontSize: '1rem', fontFamily: 'inherit' }}
-              />
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-                Insira o link de uma imagem para alterar a sua foto de perfil.
-              </p>
-            </div>
           </div>
         </section>
 

@@ -62,6 +62,7 @@ export default function LearningRoom() {
   const [copied,       setCopied]       = useState(false);
   const [playerError,  setPlayerError]  = useState(false);
   const [activeTab,    setActiveTab]    = useState('overview');
+  const [expandedModules, setExpandedModules] = useState<Record<string, boolean>>({});
 
   const [showRatingModal, setShowRatingModal] = useState(false);
   const [showCourseCompleteModal, setShowCourseCompleteModal] = useState(false);
@@ -119,13 +120,20 @@ export default function LearningRoom() {
 
     // Resume: last watched lesson
     const saved = parseInt(localStorage.getItem(RESUME_KEY(user.id, courseId)) || '-1');
+    let startingIdx = 0;
     if (saved >= 0 && saved < c.lessons.length) {
-      setCurrentIdx(saved);
+      startingIdx = saved;
     } else {
       // Fallback: first incomplete lesson
       const firstIncomplete = c.lessons.findIndex(l => !e.completedLessons.includes(l.id));
-      setCurrentIdx(firstIncomplete !== -1 ? firstIncomplete : 0);
+      startingIdx = firstIncomplete !== -1 ? firstIncomplete : 0;
     }
+    setCurrentIdx(startingIdx);
+    
+    // Auto expand the module of the starting lesson
+    const startingLesson = c.lessons[startingIdx];
+    const modName = startingLesson?.module || 'Geral';
+    setExpandedModules(prev => ({ ...prev, [modName]: true }));
   }, [courseId, user, navigate]);
 
   // ── 2. Load YouTube IFrame API ───────────────────────────────────────────
@@ -286,6 +294,12 @@ export default function LearningRoom() {
     if (!canGoto(idx)) return;
     clearCountdown();
     setCurrentIdx(idx);
+    
+    if (course) {
+      const lesson = course.lessons[idx];
+      const modName = lesson?.module || 'Geral';
+      setExpandedModules(prev => ({ ...prev, [modName]: true }));
+    }
   }
 
   function handleMarkComplete() {
@@ -531,8 +545,8 @@ export default function LearningRoom() {
             {activeTab === 'Visão geral' && (
               <div>
                 <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', color: '#1c1d1f' }}>{lesson.title}</h2>
-                <div style={{ fontSize: '1rem', lineHeight: 1.6, color: '#3e4143', background: '#f7f9fa', padding: '1.5rem', borderRadius: '8px', border: '1px solid #d1d7dc' }}>
-                  <p style={{ color: '#6a6f73', fontSize: '0.95rem', marginBottom: '0' }}>Esta é uma aula em vídeo. Assista até ao fim para que a plataforma marque a aula como concluída automaticamente.</p>
+                <div style={{ fontSize: '1rem', lineHeight: 1.6, color: '#3e4143', background: '#f7f9fa', padding: '1.5rem', borderRadius: '8px', border: '1px solid #d1d7dc', whiteSpace: 'pre-wrap' }}>
+                  {lesson.description || <p style={{ color: '#6a6f73', fontSize: '0.95rem', marginBottom: '0' }}>Esta é uma aula em vídeo. Assista até ao fim para que a plataforma marque a aula como concluída automaticamente.</p>}
                 </div>
               </div>
             )}
@@ -554,63 +568,99 @@ export default function LearningRoom() {
           </div>
           
           <div style={{ flex: 1, overflowY: 'auto' }}>
-            {/* Fake Section Header */}
-            <div style={{ padding: '1rem 1.25rem', background: '#f7f9fa', borderBottom: '1px solid #d1d7dc' }}>
-              <div style={{ fontWeight: 700, color: '#1c1d1f', fontSize: '0.95rem', marginBottom: '0.2rem' }}>
-                Seção 1: Apresentação do curso
-              </div>
-              <div style={{ fontSize: '0.75rem', color: '#6a6f73' }}>
-                {enrollment.completedLessons.length} / {course.lessons.length} aulas
-              </div>
-            </div>
-
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              {course.lessons.map((l, i) => {
-                const done       = enrollment.completedLessons.includes(l.id);
-                const isCur      = i === currentIdx;
-                const accessible = canGoto(i);
-                const locked     = seqLock && !accessible;
+              {(() => {
+                // Group lessons by module
+                const modulesRecord: Record<string, { l: typeof course.lessons[0], i: number }[]> = {};
+                course.lessons.forEach((l, i) => {
+                  const modName = l.module || 'Geral';
+                  if (!modulesRecord[modName]) modulesRecord[modName] = [];
+                  modulesRecord[modName].push({ l, i });
+                });
 
-                return (
-                  <button
-                    key={l.id}
-                    onClick={() => gotoLesson(i)}
-                    disabled={locked}
-                    title={locked ? 'Conclua a aula anterior para desbloquear' : l.title}
-                    style={{
-                      display: 'flex', alignItems: 'flex-start', gap: '0.8rem',
-                      padding: '1rem 1.25rem', width: '100%',
-                      textAlign: 'left',
-                      background: isCur ? '#d1d7dc' : 'transparent',
-                      border: 'none', borderBottom: '1px solid #d1d7dc',
-                      cursor: locked ? 'not-allowed' : 'pointer',
-                      opacity: locked ? 0.6 : 1,
-                      transition: 'background 0.15s'
-                    }}
-                    onMouseEnter={e => { if (!isCur && !locked) e.currentTarget.style.background = '#f7f9fa'; }}
-                    onMouseLeave={e => { if (!isCur && !locked) e.currentTarget.style.background = 'transparent'; }}
-                  >
-                    {/* Checkbox (Udemy uses a square) */}
-                    <span style={{ flexShrink: 0, marginTop: '2px', display: 'flex' }}>
-                      {done
-                        ? <CheckCircle size={18} fill="#1c1d1f" color="#fff" />
-                        : <Square size={18} color="#6a6f73" />
-                      }
-                    </span>
+                return Object.entries(modulesRecord).map(([modName, modLessons], mIdx) => {
+                  const isExpanded = expandedModules[modName];
+                  const toggleExpand = () => setExpandedModules(p => ({ ...p, [modName]: !isExpanded }));
+                  
+                  // Calculate module progress
+                  const completedInMod = modLessons.filter(ml => enrollment.completedLessons.includes(ml.l.id)).length;
+                  
+                  return (
+                    <div key={modName} style={{ borderBottom: '1px solid #d1d7dc' }}>
+                      {/* Module Header */}
+                      <button
+                        onClick={toggleExpand}
+                        style={{
+                          width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                          padding: '1rem 1.25rem', background: '#f7f9fa', border: 'none', cursor: 'pointer', textAlign: 'left'
+                        }}
+                      >
+                        <div>
+                          <div style={{ fontWeight: 700, color: '#1c1d1f', fontSize: '0.95rem', marginBottom: '0.2rem' }}>
+                            {modName !== 'Geral' ? `Seção ${mIdx + 1}: ${modName}` : 'Aulas do curso'}
+                          </div>
+                          <div style={{ fontSize: '0.75rem', color: '#6a6f73' }}>
+                            {completedInMod} / {modLessons.length} aulas
+                          </div>
+                        </div>
+                        <ChevronDown size={18} style={{ transform: isExpanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+                      </button>
 
-                    {/* Content */}
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: '0.9rem', lineHeight: 1.4, color: '#1c1d1f', fontWeight: 400 }}>
-                        {i + 1}. {l.title}
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: '0.4rem', fontSize: '0.75rem', color: '#6a6f73' }}>
-                        {l.type === 'video' ? <PlayCircle size={14} /> : <FileText size={14} />}
-                        {l.duration}
-                      </div>
+                      {/* Module Lessons */}
+                      {isExpanded && (
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          {modLessons.map(({ l, i }) => {
+                            const done       = enrollment.completedLessons.includes(l.id);
+                            const isCur      = i === currentIdx;
+                            const accessible = canGoto(i);
+                            const locked     = seqLock && !accessible;
+
+                            return (
+                              <button
+                                key={l.id}
+                                onClick={() => gotoLesson(i)}
+                                disabled={locked}
+                                title={locked ? 'Conclua a aula anterior para desbloquear' : l.title}
+                                style={{
+                                  display: 'flex', alignItems: 'flex-start', gap: '0.8rem',
+                                  padding: '1rem 1.25rem', width: '100%',
+                                  textAlign: 'left',
+                                  background: isCur ? '#d1d7dc' : 'transparent',
+                                  border: 'none', borderBottom: '1px solid #d1d7dc',
+                                  cursor: locked ? 'not-allowed' : 'pointer',
+                                  opacity: locked ? 0.6 : 1,
+                                  transition: 'background 0.15s'
+                                }}
+                                onMouseEnter={e => { if (!isCur && !locked) e.currentTarget.style.background = '#f7f9fa'; }}
+                                onMouseLeave={e => { if (!isCur && !locked) e.currentTarget.style.background = 'transparent'; }}
+                              >
+                                {/* Checkbox (Udemy uses a square) */}
+                                <span style={{ flexShrink: 0, marginTop: '2px', display: 'flex' }}>
+                                  {done
+                                    ? <CheckCircle size={18} fill="#1c1d1f" color="#fff" />
+                                    : <Square size={18} color="#6a6f73" />
+                                  }
+                                </span>
+
+                                {/* Content */}
+                                <div style={{ flex: 1, minWidth: 0 }}>
+                                  <div style={{ fontSize: '0.9rem', lineHeight: 1.4, color: '#1c1d1f', fontWeight: 400 }}>
+                                    {l.order || i + 1}. {l.title}
+                                  </div>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: '0.4rem', fontSize: '0.75rem', color: '#6a6f73' }}>
+                                    {l.type === 'video' ? <PlayCircle size={14} /> : <FileText size={14} />}
+                                    {l.duration}
+                                  </div>
+                                </div>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
-                  </button>
-                );
-              })}
+                  );
+                });
+              })()}
             </div>
 
             {/* Bottom quiz section if all done */}
